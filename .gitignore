@@ -9,6 +9,7 @@ __pycache__/
 # Python build artifacts
 build/
 coshop.egg-info/
+dist/
 # generated site output
 site/
 website/api/
