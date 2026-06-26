@@ -1,0 +1,54 @@
+version: v1
+catalog: catalog_v1.csv
+feature_descriptions: feature_descriptions_v1.json
+sec_split: sec_split_v1.json
+baseline_queries: baseline_queries_v1.json
+initial_known_features: initial_known_features_v1.csv
+transactions_dir: transactions_v1
+restrict_representation_to_simulator_columns: true
+hidden_from_simulator:
+  - title
+  - overview
+  - tags
+  - homepage
+  - original_language
+  - original_title
+  - poster_path
+  - tagline
+  - lead_actors
+  - supporting_actors
+  - director
+  - composer
+  - genre_primary
+  - genre_subtype
+  - setting_type
+filterable_features:
+  - adult
+  - year
+  - vote_average
+  - vote_count
+  - runtime
+  - strong_female_lead
+  - lgbtq_themes
+  - religious_themes
+  - is_superhero_film
+  - coming_of_age
+  - is_musical
+  - happy_ending
+  - animated
+  - protagonist_gender
+  - protagonist_age_group
+  - romantic_elements
+special_match_functions:
+  year: greater_than_or_equal_to
+  vote_average: greater_than_or_equal_to
+  vote_count: greater_than_or_equal_to
+  popularity: greater_than_or_equal_to
+  budget: greater_than_or_equal_to
+  revenue: greater_than_or_equal_to
+  runtime: less_than_or_equal_to
+  belongs_to_collection: jaccard_similarity
+  genres: jaccard_similarity
+  spoken_languages: jaccard_similarity
+  production_companies: jaccard_similarity
+  production_countries: jaccard_similarity

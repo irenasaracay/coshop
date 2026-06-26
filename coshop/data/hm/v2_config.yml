@@ -1,0 +1,62 @@
+version: v2
+catalog: catalog_v2.csv
+feature_descriptions: feature_descriptions_v2.json
+sec_split: sec_split_v2.json
+baseline_queries: baseline_queries_v2.json
+initial_known_features: initial_known_features_v2.csv
+popularity: popularity_v2.csv
+transactions_dir: transactions_v2
+restrict_representation_to_simulator_columns: true
+hidden_from_simulator:
+  - detail_desc
+  - prod_name
+  - product_group_name
+  - perceived_colour_value_name
+  - department_name
+  - index_group_name
+  - index_name
+  - section_name
+  - garment_group_name
+  - is_minimalist
+  - tags
+filterable_features:
+  - product_type_name
+  - perceived_colour_master_name
+  - age
+  - gender
+  - is_sport
+  - has_hood
+  - is_sustainable
+  - has_pockets
+  - has_lining
+  - is_woven_fabric
+  - belt_loop_presence
+  - has_ribbing
+  - vegan
+  - toxin_free
+  - waterproof
+  - windproof
+  - has_detachable_hood
+  - graphic_text_presence
+  - has_embroidery
+  - has_sequins
+  - has_cargo_pockets
+  - is_minimalist
+  - has_yoke_panel
+  - is_wrap_style
+  - skirt_pleating
+  - sleeve_length
+  - fit
+  - formality
+  - target_lifestyle_style
+  - dress_length
+  - waist_style
+  - fly_type
+  - shoulder_exposure_style
+  - garment_length_category
+  - jacket_type
+  - pattern_type
+  - neckline
+  - has_logo_or_brand_mark
+special_match_functions:
+  price: less_than_or_equal_to

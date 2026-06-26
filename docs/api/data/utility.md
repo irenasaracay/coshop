@@ -1,0 +1,3 @@
+# Utility
+
+::: coshop.data.utility

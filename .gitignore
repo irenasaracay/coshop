@@ -1,0 +1,14 @@
+coshop/data/*/assets/transactions*/
+coshop/data/*/assets/images*/
+coshop/data/*/assets/*.csv
+coshop/data/*/assets/*.json
+coshop/data/*/assets/*.png
+coshop/data/*/assets/.download_complete
+*.pyc
+__pycache__/
+# Python build artifacts
+build/
+coshop.egg-info/
+# generated site output
+site/
+website/api/

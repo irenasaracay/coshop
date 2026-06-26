@@ -1,0 +1,42 @@
+version: v1
+catalog: catalog_v1.csv
+feature_descriptions: feature_descriptions_v1.json
+sec_split: sec_split_v1.json
+baseline_queries: baseline_queries_v1.json
+initial_known_features: initial_known_features_v1.csv
+transactions_dir: transactions_v1
+restrict_representation_to_simulator_columns: true
+hidden_from_simulator:
+  - title
+  - title_without_series
+  - language_code
+  - country_code
+  - description
+  - image_url
+  - url
+  - tags
+  - similar_books
+  - setting_type
+filterable_features:
+  - is_ebook
+  - is_in_series
+  - is_translated
+  - cliffhanger_ending
+  - is_indie_or_self_published
+  - fanfiction_origin
+  - is_debut
+  - based_on_true_story
+  - happy_ending
+  - love_triangle
+  - war_or_military_focus
+  - art_or_music_focus
+  - magic_system
+  - classic
+  - educational_value
+special_match_functions:
+  average_rating: greater_than_or_equal_to
+  ratings_count: greater_than_or_equal_to
+  text_reviews_count: greater_than_or_equal_to
+  publication_year: greater_than_or_equal_to
+  num_pages: less_than_or_equal_to
+  genres: jaccard_similarity

@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coshop"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "gdown",
+    "numpy",
+    "datasets",
+    "lotus-ai>=1.1",
+    "langchain-anthropic==0.3",
+    "langchain-openai>=0.3",
+    "langchain-huggingface>=0.3",
+    "langchain-core==0.3.79",
+    "langchain",
+    "langgraph==0.4.8",
+    "langgraph-checkpoint==2.1.0",
+    "langgraph-prebuilt==0.2.2",
+    "transformers",
+    "sentence-transformers",
+    "openai",
+    "anthropic",
+    "streamlit>=1.49",
+    "inflect",
+    "pandas",
+    "Pillow",
+    "json-repair>=0.40",
+    "trueskill",
+    "rank-bm25",
+    "requests",
+    "gunicorn",
+    "hnswlib",
+    "flask",
+    "pyyaml",
+]
+
+[project.scripts]
+coshop-vector-search-server = "coshop.tools.vector_search_server:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["coshop*"]
+
+[tool.setuptools.package-data]
+"coshop" = [
+    "data/*/*_config.yml",
+    "user_simulator/simulator_prompts.json",
+]

@@ -1,0 +1,3 @@
+# Model
+
+::: coshop.utils.model

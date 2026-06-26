@@ -1,0 +1,79 @@
+site_name: coshop
+site_url: https://i-gao.github.io/coshop/api/
+repo_url: https://github.com/i-gao/coshop
+docs_dir: docs
+site_dir: website/api
+use_directory_urls: true
+theme:
+  name: material
+  font:
+    text: Inter
+    code: Roboto Mono
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_source: false
+            # Fold __init__ docstrings into the class instead of listing it
+            # as a separate member after the attributes.
+            merge_init_into_class: true
+            # Drop the module-path signature line shown under module headings.
+            show_root_full_path: false
+            show_root_members_full_path: false
+            # Hide private/dunder members plus specific internal helpers we
+            # don't want in the public API docs. Each "!pattern" excludes a
+            # member by (last-component) name.
+            filters:
+              - "!^_"
+              - "!^load_dataset_config$"
+              - "!^build_z_variants_for_spec$"
+              - "!^Representation$"
+              - "!^representation_text_to_html$"
+              - "!^score_single_item$"
+              - "!^build_historical_data$"
+              - "!^load_transaction_data$"
+              - "!^get_simulator_profile$"
+              - "!^make_render_item_fn$"
+              - "!^get_image_fn$"
+
+nav:
+  - Home: index.md
+  - API Reference:
+    - data:
+      - Datasets: api/data/datasets.md
+      - Representation: api/data/representation.md
+      - Utility: api/data/utility.md
+      - Subset catalog: api/data/subset_catalog.md
+      - H&M: api/data/hm.md
+      - MovieLens: api/data/movielens.md
+      - Goodreads: api/data/goodreads.md
+    - evaluation:
+      - Metrics: api/evaluation/metrics.md
+      - Budget: api/evaluation/budget.md
+    - tools:
+      - Catalog retrieval: api/tools/catalog_retrieval.md
+      - History search: api/tools/history_search.md
+      - Reflect: api/tools/reflect.md
+      - Retrieval backends: api/tools/retrieval.md
+      - Vector search server: api/tools/vector_search.md
+    - user_simulator:
+      - User: api/user_simulator/user.md
+      - Expert user: api/user_simulator/expert_user.md
+      - Helpers: api/user_simulator/helpers.md
+    - utils:
+      - Custom types: api/utils/custom_types.md
+      - Agent: api/utils/agent.md
+      - LangChain agent: api/utils/langchain_agent.md
+      - Model: api/utils/model.md
+      - Misc: api/utils/misc.md

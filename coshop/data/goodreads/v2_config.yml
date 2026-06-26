@@ -1,0 +1,118 @@
+version: v2
+catalog: catalog_v2.csv
+feature_descriptions: feature_descriptions_v2.json
+sec_split: sec_split_v2.json
+baseline_queries: baseline_queries_v2.json
+initial_known_features: initial_known_features_v2.csv
+transactions_dir: transactions_v2
+restrict_representation_to_simulator_columns: true
+hidden_from_simulator:
+  - title
+  - title_without_series
+  - description
+  - tags
+  - language_code
+  - country_code
+  - url
+  - image_url
+  - similar_books
+  - reviews
+filterable_features:
+  - series_position
+  - series_works_count
+  - country_code
+  - series_name
+  - author_name
+  - is_ebook
+  - is_in_series
+  - audiobook
+  - target_age_group
+  - award_status
+  - world_type
+  - setting_type
+  - lgbtq_themes
+  - mystery_subgenre
+  - fantasy_subgenre
+  - sci_fi_subgenre
+  - technology_level
+  - violence_level
+  - emotional_tone
+  - nonfiction_subtype
+  - happy_ending
+  - is_collection
+  - cliffhanger_ending
+  - is_indie_or_self_published
+  - fanfiction_origin
+  - is_debut
+  - based_on_true_story
+  - illness_or_terminal_diagnosis
+  - magic_system
+  - nsfw
+  - art_or_music_focus
+  - classic
+  - summer_read
+  - is_physical_format
+  - book_club_pick
+  - chick_lit
+  - theme_death
+  - theme_love_or_romance
+  - theme_friendship
+  - theme_family
+  - theme_magic
+  - theme_war
+  - theme_identity
+  - theme_faith_religion
+  - theme_survival
+  - theme_power_politics
+  - theme_crime
+  - theme_technology
+  - theme_nature
+  - theme_freedom_speech
+  - theme_redemption
+  - theme_cultural_clash
+  - theme_adventure
+  - theme_drama
+  - theme_mythology
+  - theme_horror
+  - theme_abuse
+  - theme_feminism
+  - theme_psychology
+  - theme_time_travel
+  - trope_enemies_to_lovers
+  - trope_friends_to_lovers
+  - trope_forbidden_love
+  - trope_second_chance
+  - trope_fake_dating
+  - trope_chosen_one
+  - trope_found_family
+  - trope_rags_to_riches
+  - trope_slow_burn
+  - trope_alpha_hero
+  - trope_coming_of_age
+  - trope_redemption_arc
+  - trope_revenge
+  - trope_identity_swap
+  - trope_mentor_protege
+  - trope_forced_proximity
+  - trope_opposites_attract
+  - trope_secret_identity
+  - trope_love_triangle
+  - trope_forced_marriage
+  - trope_secret_baby
+  - romance_subgenre_erotic
+  - romance_subgenre_dark_romance
+  - romance_subgenre_paranormal
+  - romance_subgenre_christian_or_clean
+  - romance_subgenre_romantic_suspense
+  - romance_subgenre_historical
+  - romance_subgenre_regency
+  - romance_subgenre_sci_fi_or_fantasy
+  - romance_subgenre_new_adult
+  - romance_subgenre_contemporary
+special_match_functions:
+  average_rating: greater_than_or_equal_to
+  ratings_count: greater_than_or_equal_to
+  text_reviews_count: greater_than_or_equal_to
+  publication_year: greater_than_or_equal_to
+  num_pages: less_than_or_equal_to
+  genres: jaccard_similarity

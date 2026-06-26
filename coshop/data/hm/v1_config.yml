@@ -1,0 +1,57 @@
+version: v1
+catalog: catalog_v1.csv
+feature_descriptions: feature_descriptions_v1.json
+sec_split: sec_split_v1.json
+baseline_queries: baseline_queries_v1.json
+initial_known_features: initial_known_features_v1.csv
+popularity: popularity.csv
+transactions_dir: transactions_v1
+restrict_representation_to_simulator_columns: true
+hidden_from_simulator:
+  - detail_desc
+  - prod_name
+  - product_group_name
+  - perceived_colour_value_name
+  - department_name
+  - index_group_name
+  - index_name
+  - section_name
+  - garment_group_name
+  - is_winter_friendly
+  - is_summer_friendly
+  - tags
+  - is_minimalist
+filterable_features:
+  - product_type_name
+  - perceived_colour_master_name
+  - price
+  - age
+  - gender
+  - is_sport
+  - material
+  - sleeve_length
+  - neckline
+  - fit
+  - has_hood
+  - has_stretch
+  - is_sustainable
+  - has_pockets
+  - has_lining
+  - is_woven_fabric
+  - belt_loop_presence
+  - has_ribbing
+  - vegan
+  - toxin_free
+  - waterproof
+  - windproof
+  - has_detachable_hood
+  - graphic_text_presence
+  - has_embroidery
+  - has_sequins
+  - has_logo_or_brand_mark
+  - has_cargo_pockets
+  - is_minimalist
+  - has_yoke_panel
+  - is_wrap_style
+special_match_functions:
+  price: less_than_or_equal_to

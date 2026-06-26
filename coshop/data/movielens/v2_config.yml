@@ -1,0 +1,113 @@
+version: v2
+catalog: catalog_v2.csv
+feature_descriptions: feature_descriptions_v2.json
+sec_split: sec_split_v2.json
+baseline_queries: baseline_queries_v2.json
+initial_known_features: initial_known_features_v2.csv
+transactions_dir: transactions_v2
+restrict_representation_to_simulator_columns: true
+hidden_from_simulator:
+  - title
+  - overview
+  - tags
+  - homepage
+  - original_language
+  - original_title
+  - poster_path
+  - tagline
+filterable_features:
+  - adult
+  - year
+  - mpaa_rating
+  - animated
+  - award_profile
+  - source_material
+  - bechdel_test
+  - black_and_white
+  - on_DVD
+  - on_bluray
+  - on_Netflix
+  - nudity
+  - imdb_top_list
+  - national_film_registry
+  - sequel_or_franchise
+  - remake
+  - era
+  - coming_of_age
+  - unrequited_love
+  - melancholic
+  - anti_hero
+  - dark_comedy
+  - slow_burn
+  - romance
+  - found_family
+  - friendship
+  - unlikely_friendship
+  - small_town
+  - psychological_thriller
+  - mentor_protege
+  - ensemble_cast
+  - twist_ending
+  - road_trip
+  - time_travel
+  - female_led
+  - satire
+  - drama
+  - comedy
+  - thriller
+  - horror
+  - documentary
+  - mockumentary
+  - fantasy
+  - adventure
+  - sci_fi
+  - action
+  - western
+  - musical
+  - sports
+  - mystery
+  - crime
+  - war
+  - historical
+  - urban_setting
+  - high_school
+  - prison
+  - suburban
+  - music
+  - drugs
+  - violence
+  - religion
+  - family
+  - politics
+  - racism
+  - revenge
+  - murder
+  - heist
+  - survival
+  - espionage
+  - supernatural
+  - dystopian
+  - biographical
+  - lgbtq
+  - mental_health
+  - martial_arts
+  - gangster
+  - superhero
+  - terrorism
+  - conspiracy
+  - space
+  - zombies
+  - isolation
+special_match_functions:
+  year: greater_than_or_equal_to
+  vote_average: greater_than_or_equal_to
+  vote_count: greater_than_or_equal_to
+  popularity: greater_than_or_equal_to
+  budget: greater_than_or_equal_to
+  revenue: greater_than_or_equal_to
+  runtime: less_than_or_equal_to
+  belongs_to_collection: jaccard_similarity
+  genres: jaccard_similarity
+  spoken_languages: jaccard_similarity
+  production_companies: jaccard_similarity
+  production_countries: jaccard_similarity

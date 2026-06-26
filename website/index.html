@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beyond expert users: agents should help users construct preferences, not just elicit them</title>
+  <meta name="description" content="CoShop is an interactive benchmark for agentic recommender systems that must help non-expert users construct their preferences, not just elicit them." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wrap">
+      <div class="brand">Beyond expert users</div>
+      <div class="links">
+        <a href="#abstract">Abstract</a>
+        <a href="#user-modeling">User modeling</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#results">Results</a>
+        <a href="api/" >Docs</a>
+        <a class="btn-mini" href="paper.pdf" target="_blank" rel="noopener">Paper</a>
+        <!-- <a class="btn-mini btn-mini-ghost" href="https://github.com/i-gao/coshop">Code</a> -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <!-- <span class="eyebrow">Interactive recommendation benchmark</span> -->
+      <h1>Agents should help users <em>construct</em> preferences, not just elicit them</h1>
+      <p class="lede">
+        CoShop is an interactive benchmark for agentic recommender systems that must help
+        <strong>non-expert users</strong> construct their preferences — not just elicit them —
+        before making a recommendation.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="paper.pdf" target="_blank" rel="noopener">Read the paper</a>
+        <a class="btn btn-ghost" href="https://github.com/i-gao/coshop">View the code</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABSTRACT -->
+  <section id="abstract" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Abstract</div>
+      </div>
+      <div class="abstract-body">
+        <p>
+          Agents typically assume an expert user — one with well-formed preferences about what
+          they want — and default to clarifying questions whenever the task is underspecified.
+          We argue this assumption is unrealistic. Users often lack the domain knowledge to have
+          completely specified preferences; if asked about their preference on some feature, the
+          user may be unable to answer without the agent <em>teaching</em> some domain knowledge
+          needed to form a preference for that feature, e.g., via examples or explanations.
+        </p>
+        <p>
+          To formalize these principles, we draw on the Search-Experience-Credence framework from
+          Information Economics to introduce <strong>CoPref</strong>, a model of how users construct
+          preferences based on agent dialog actions. We then study these ideas concretely in agentic
+          recommender systems, proposing <strong>CoShop</strong>, an interactive benchmark. In CoShop,
+          an agent converses with and makes recommendations for a CoPref user. The agent's performance
+          depends on whether it can help the user gain the knowledge needed to specify the task well.
+        </p>
+        <p>
+          Evaluating five frontier models, we find that <strong>no agent exceeds 56% accuracy</strong>
+          on CoShop despite five turns of interaction. Failures stem not from agents' ability to find
+          items, but from how little the interaction expands what users know about what they want.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODELING PREFERENCE CONSTRUCTION -->
+  <section id="user-modeling">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Beyond expert users</div>
+        <h2>Modeling preference construction</h2>
+        <p>
+          Rather than assume an expert user with static, well-formed preferences, CoShop models a
+          <strong>CoPref</strong> user who <em>constructs</em> preferences in response to the agent's
+          dialog actions<a class="cite-ref" href="https://psycnet.apa.org/record/1991-33155-001" target="_blank" rel="noopener">[1]</a><a class="cite-ref" href="https://www.jstor.org/stable/10.1086/209535" target="_blank" rel="noopener">[2]</a>.
+          The agent's job is to <em>teach</em> — through examples and explanations, not just questions —
+          until the user can form a preference at all.
+        </p>
+        <ol class="refs">
+          <li><a href="https://psycnet.apa.org/record/1991-33155-001" target="_blank" rel="noopener">Fischhoff, B. (1991). Value elicitation: Is there anything in there? <em>American Psychologist</em>.</a></li>
+          <li><a href="https://www.jstor.org/stable/10.1086/209535" target="_blank" rel="noopener">Bettman, J. R., Luce, M. F. &amp; Payne, J. W. (1998). Constructive Consumer Choice Processes. <em>Journal of Consumer Research</em>.</a></li>
+        </ol>
+      </div>
+
+      <figure class="fig flat narrow">
+        <img src="assets/figures/expert_vs_copref.png" alt="Prior work assumes expert users with static preferences; CoShop models CoPref users who co-construct preferences from agent dialog actions." />
+      </figure>
+    </div>
+  </section>
+
+  <!-- SEC FRAMEWORK -->
+  <section id="sec" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">The framework</div>
+        <h2>Not all preferences are equally easy to construct</h2>
+        <p>
+          The Search–Experience–Credence (SEC) framework from information economics<a class="cite-ref" href="https://www.jstor.org/stable/1830691?seq=1" target="_blank" rel="noopener">[3]</a><a class="cite-ref" href="https://www.journals.uchicago.edu/doi/abs/10.1086/466756" target="_blank" rel="noopener">[4]</a>
+          partitions features by how a user forms a preference: <strong>search</strong> features need
+          only a clarifying question, <strong>experience</strong> features need example options, and
+          <strong>credence</strong> features need a technical explanation. Each dialog action only
+          unlocks features of its matching type.
+        </p>
+        <ol class="refs" start="3">
+          <li><a href="https://www.jstor.org/stable/1830691?seq=1" target="_blank" rel="noopener">Nelson, P. (1970). Information and Consumer Behavior. <em>Journal of Political Economy</em>.</a></li>
+          <li><a href="https://www.journals.uchicago.edu/doi/abs/10.1086/466756" target="_blank" rel="noopener">Darby, M. R. &amp; Karni, E. (1973). Free Competition and the Optimal Amount of Fraud. <em>Journal of Law and Economics</em>.</a></li>
+        </ol>
+      </div>
+
+      <figure class="fig flat narrow">
+        <img src="assets/figures/problem.png" alt="Agent dialog actions (clarifying questions, example options, technical explanations) unlock search, experience, and credence features respectively." />
+      </figure>
+    </div>
+  </section>
+
+  <!-- DATASETS / EXPLORER -->
+  <section id="datasets">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Datasets</div>
+        <h2>Explore the SEC splits and preference stacks</h2>
+        <p>
+          CoShop covers three product domains sourced from real human–product interactions. Each test
+          user has a <strong>personalized SEC split</strong> and an initial preference state
+          <strong>S₁</strong>. Browse real samples below.
+        </p>
+      </div>
+      <div class="explorer-single" id="explorer">
+        <div class="domain-tabs" id="domain-tabs"></div>
+
+        <div class="exp-controls">
+          <div class="card">
+            <h4>Domain summary</h4>
+            <div class="statgrid" id="domain-stats"></div>
+            <p class="note" style="margin:12px 0 0;">mean (std) across 100 test users</p>
+          </div>
+          <div class="card">
+            <h4>How often each feature is search / experience / credence</h4>
+            <div class="dist-legend">
+              <span><span class="dot search"></span>search</span>
+              <span><span class="dot experience"></span>experience</span>
+              <span><span class="dot credence"></span>credence</span>
+            </div>
+            <div class="sec-dist" id="sec-dist"></div>
+            <p class="note" style="margin:10px 0 0;">share across 100 users — the same feature varies by user</p>
+          </div>
+        </div>
+
+        <div class="exp-stack-block">
+          <h4 class="picker-head">Sample users</h4>
+          <div class="spec-picker" id="spec-picker"></div>
+          <div class="target-note" id="target-note"></div>
+          <div class="card stack-card">
+            <h4>Preference stack — what the user knows over the conversation</h4>
+            <div class="stack" id="stack"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENCHMARK TASK -->
+  <section id="benchmark" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">The benchmark task</div>
+        <h2>Each task is a four-stage rollout</h2>
+      </div>
+
+      <div class="stages">
+        <div class="stage">
+          <img class="stage-img" src="assets/figures/conversation.png" alt="" />
+          <div class="stage-title"><span class="num">1</span><h4>Conversation</h4></div>
+          <p>The agent converses with a CoPref user for up to five turns, calling a catalog-search tool under budget.</p>
+        </div>
+        <div class="stage">
+          <img class="stage-img" src="assets/figures/research.png" alt="" />
+          <div class="stage-title"><span class="num">2</span><h4>Research</h4></div>
+          <p>The agent searches the catalog more thoroughly with an expanded retrieval budget.</p>
+        </div>
+        <div class="stage">
+          <img class="stage-img" src="assets/figures/report.png" alt="" />
+          <div class="stage-title"><span class="num">3</span><h4>Report</h4></div>
+          <p>The agent writes up its final k = 5 recommendations.</p>
+        </div>
+        <div class="stage">
+          <img class="stage-img" src="assets/figures/decision.png" alt="" />
+          <div class="stage-title"><span class="num">4</span><h4>Selection</h4></div>
+          <p>The user picks one item, evaluating it against their final, co-constructed preference state.</p>
+        </div>
+      </div>
+
+      <p class="section-lead" style="margin-top:28px;">
+        The <code>coshop</code> Python package provides everything a rollout needs (the simulated
+        <strong>CoPref user</strong>, the three <strong>datasets</strong>, retrieval tools, and the
+        <strong>metrics</strong>) so you can drop in your own model or agent harness.
+      </p>
+      <div class="install-bar">
+        <code class="install-cmd"><span class="prompt">$</span> pip install coshop</code>
+        <span class="install-links">
+          <a href="api/">Documentation</a>
+          <span class="sep">·</span>
+          <a href="https://github.com/i-gao/coshop">GitHub repository</a>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVALUATION PHILOSOPHY -->
+  <section id="evaluation">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Evaluation philosophy</div>
+        <h2>We score the user–agent <em>team</em>, not just retrieval</h2>
+      </div>
+
+      <p class="section-lead">
+        A recommendation is only useful if the user can actually recognize and choose it. So CoShop's
+        primary metric is <strong>team accuracy</strong>: after the agent delivers its report of
+        <code>k = 5</code> items, the simulated user picks one item <code>x̂</code>, and we ask whether
+        <code>x̂</code> matches the target <code>x*</code> — evaluated against the user's <em>final</em>
+        preference state, not the agent's internal beliefs.
+      </p>
+
+      <div class="metric-cols" style="margin-top:24px;">
+        <div class="card metric">
+          <div class="metric-tag agent">Agent recall@k</div>
+          <h4 style="margin:.4rem 0 .4rem; text-transform:none; letter-spacing:0; color:var(--ink); font-size:1.05rem;">Did the agent find it?</h4>
+          <p>Whether the target <code>x*</code> appears anywhere in the agent's report. Measures pure
+          retrieval — the agent's ability to surface the right item.</p>
+        </div>
+        <div class="card metric highlight">
+          <div class="metric-tag team">Team accuracy <span class="primary-pill">primary</span></div>
+          <h4 style="margin:.4rem 0 .4rem; text-transform:none; letter-spacing:0; color:var(--ink); font-size:1.05rem;">Could the user choose it?</h4>
+          <p>Whether the user's selected item <code>x̂</code> equals <code>x*</code>. The user can only
+          break ties among the <code>k</code> items as well as their constructed preference state allows.</p>
+        </div>
+      </div>
+
+      <p class="philosophy-note">
+        This gap is the whole point. If the user's preference state <code>S</code> isn't rich enough to
+        distinguish the target from its <code>k−1</code> distractors, a perfect report still fails at
+        selection. Team accuracy is therefore consistently — and substantially — lower than agent recall:
+        <code>gpt-5.2</code> scores 65% recall@k on the fashion task but only 56% team accuracy. Evaluating
+        the team stresses what matters: <strong>did the interaction actually teach the user enough to
+        choose well?</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Main results</h2>
+      </div>
+
+      <div class="tabs" id="result-tabs">
+        <button class="tab active" data-panel="A">A · Underspecification challenges models</button>
+        <button class="tab" data-panel="B">B · Human-facing failures</button>
+        <button class="tab" data-panel="C">C · Harness interventions</button>
+      </div>
+      <div class="tabpanels">
+      <div class="tabpanel active" data-panel="A">
+        <p class="panel-text">
+          <strong>Agents excel at search but fail to resolve underspecification.</strong>
+          Given the user's full preference set upfront, models score highly. E.g.,
+          <code>claude-sonnet-4.6</code> averages 94.3% across datasets (<code>gpt-4.1-mini</code> and <code>claude-haiku-4.5</code> hit context limit errors). But every model drops when faced with CoPref users.
+          It matters that not all features can be elicited via simple questions:
+          <code>gpt-5.2</code> scores 57.0% when all features are
+          search features, but only 27.7% with the full SEC framework, where some features need example options
+          or explanations rather than clarifying questions.
+        </p>
+      </div>
+      <div class="tabpanel" data-panel="B">
+        <p class="panel-text">
+          <strong>Team accuracy reveals human-facing failures.</strong>
+          Team accuracy runs consistently below agent recall@k — even when the agent surfaces <code>x*</code>,
+          users often can't break ties with the other <code>k−1</code> options
+          (<code>gpt-5.2</code>: 65% recall@k vs. 56% team accuracy on fashion). The gap has two sources:
+          (1) poor report quality, where agents write bad summaries of products for the user to review, and (2) underdeveloped preference states, 
+          where agents failed to help users learn about discriminative features.
+        </p>
+      </div>
+      <div class="tabpanel" data-panel="C">
+        <p class="panel-text">
+          <strong>Interventions on agent knowledge and communication.</strong>
+          Giving agents the user's prior rating history yields minimal gains. But crudely overriding
+          agents' item descriptions to mention all catalog features produces substantial improvements —
+          <code>gpt-4.1-mini</code>'s team accuracy from
+          36% to 46%. This reflects that agents fail to proactively surface features the user may not have considered, 
+          preferring to rehash already-known ones when describing options.
+        </p>
+      </div>
+      </div>
+
+      <figure class="fig" style="margin-top:32px;">
+        <img src="assets/figures/combined.png" alt="Main results across five frontier models: (A) underspecification curve, (B) sources of the agent-team gap, (C) effect of interventions." />
+        <figcaption>Team accuracy across five frontier models, three domains, and several interactive settings.</figcaption>
+      </figure>
+
+      <!-- interaction strategies -->
+      <div class="section-head" style="margin:48px 0 18px;">
+        <h2 style="font-size:1.4rem;">Models adopt suboptimal interaction strategies</h2>
+        <p>
+          Models rely on questions and examples but never explain, and these actions are often
+          ineffective. 20% of <code>gpt-5.2</code>'s questions only confirm preferences the user already
+          stated. Some models show items that aren't in the catalog (<code>claude-haiku-4.5</code> in
+          47% of conversations), and examples often omit features, so they don't grow the user's state.
+          Across most models, requests for more detail tend to repeat known features rather than
+          introduce new ones (35% of <code>gpt-4.1-mini</code>'s conversations).
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th rowspan="2" class="lcell">Model</th>
+              <th colspan="3">Budget utilization (median)</th>
+              <th colspan="3">Behavior frequency (avg)</th>
+            </tr>
+            <tr>
+              <th class="has-tip" title="Median clarifying questions asked">Questions</th>
+              <th class="has-tip" title="Median example items shown to the user">Examples</th>
+              <th class="has-tip" title="Median technical explanations given for credence features">Explanations</th>
+              <th class="has-tip" title="Avg. questions that merely confirm an already-stated preference">Confirm. Qs</th>
+              <th class="has-tip" title="Avg. times the agent restates known features instead of introducing new ones when asked for more detail">Loops</th>
+              <th class="has-tip" title="Avg. times the agent shows an item not in the catalog">Hallucinations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="lcell">claude-haiku-4.5</td><td>9.50</td><td>6.33</td><td>0.00</td><td>0.10</td><td>0.24</td><td>0.47</td></tr>
+            <tr><td class="lcell">claude-sonnet-4.6</td><td>8.17</td><td>5.33</td><td>0.00</td><td>0.10</td><td>0.15</td><td>0.00</td></tr>
+            <tr><td class="lcell">gpt-4.1-mini</td><td>7.58</td><td>7.75</td><td>0.00</td><td>0.07</td><td>0.35</td><td>0.01</td></tr>
+            <tr><td class="lcell">gpt-5.2</td><td>9.00</td><td>6.00</td><td>0.00</td><td>0.20</td><td>0.03</td><td>0.00</td></tr>
+            <tr><td class="lcell">gpt-oss-120b</td><td>6.50</td><td>4.67</td><td>0.00</td><td>0.06</td><td>0.20</td><td>0.31</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:8px;">
+        Budget-utilization columns are medians; behavior columns are per-conversation averages.
+        <strong>No model ever provides explanations</strong> for technical features.
+      </p>
+
+      <!-- sample transcript -->
+      <div class="section-head" style="margin:48px 0 14px;">
+        <h2 style="font-size:1.4rem;">Sample transcript</h2>
+        <p>
+          Clarifying questions asked by <code>gpt-5.2</code> on a MovieLens task — 14 of 20 are
+          <strong class="conf-key">confirmation questions</strong> (highlighted): they re-confirm or
+          probe the flexibility of a requirement the user already stated. 
+          These are both cognitively demanding and less discriminative than exploring new features.
+        </p>
+      </div>
+
+      <div class="transcript">
+        <div class="t-request">
+          <span class="t-who">User request</span>
+          “I'd love a live-action movie from the '70s or '80s, under two hours, not rated R, made in the
+          US and in English. It should have a strong adult female lead, an ensemble team vibe with only
+          mild action, feel contemporary, be fairly popular with a decent rating, and have earned at
+          least around $13 million.”
+        </div>
+        <div class="t-turn">
+          <span class="t-label">Turn 1</span>
+          <p>(1) Is your ideal tone closer to (A) <em>Nine to Five</em> (snappy, “team vs. boss”) or
+          (B) <em>Steel Magnolias</em> (warm, friendship + tears)?
+          <strong class="conf">(2) When you say “adult female lead,” is late 20s+ required, or would an
+          older teen/college-age lead still be okay if the ensemble team vibe is strong?</strong>
+          <strong class="conf">(3) Should the “mild action” be almost none (mostly dialogue/comedy), or
+          is light chase/physical comedy okay?</strong>
+          (4) Any strong preference for PG vs PG-13, or either is fine as long as it's not R?
+          <strong class="conf">(5) Do you want the ensemble to be mostly women, or is mixed-gender
+          fine?</strong></p>
+        </div>
+        <div class="t-turn">
+          <span class="t-label">Turn 2</span>
+          <p><strong class="conf">(6) Is “mystery/thriller” a hard requirement (primary genre), or just a
+          strong preference?</strong>
+          <strong class="conf">(7) Is “survival plot” a hard requirement (characters trapped / hunted /
+          must endure), or were you using “survival” more loosely?</strong>
+          <strong class="conf">(8) For the “ensemble team vibe,” do you mean a group solving the central
+          mystery together, or is it okay if the lead drives the case with a strong supporting
+          cast?</strong></p>
+        </div>
+        <details class="t-more">
+          <summary>Show turns 3–6</summary>
+          <div class="t-turn">
+            <span class="t-label">Turn 3</span>
+            <p><strong class="conf">(9) Is comedy actually desired (“mystery-comedy” / “comedic
+            thriller”), or are you fine with a straight thriller as long as the ensemble mystery-solving
+            is present?</strong>
+            <strong class="conf">(10) How strict is the “strong adult female lead” requirement versus
+            simply having an ensemble with at least one prominent adult woman?</strong></p>
+          </div>
+          <div class="t-turn">
+            <span class="t-label">Turn 4</span>
+            <p>(11) What does “popularity above average” mean to you in practice?
+            (12) Would you consider <em>Clue</em>'s popularity score “above average” already, or do you
+            want something higher? (13) Would you accept “high vote count + decent rating” as the
+            definition of “popular”?
+            <strong class="conf">(14) How strict is “strong adult female lead” in a true
+            ensemble?</strong>
+            <strong class="conf">(15) Do you prefer Option A (strict), where the central driver must be
+            an adult woman, or Option B (moderate), where she is one of the top central figures?</strong></p>
+          </div>
+          <div class="t-turn">
+            <span class="t-label">Turn 5</span>
+            <p>(16) When you say “survival-style,” do you mean A. literal survival (trapped/disaster),
+            B. on-the-run / being targeted, or C. lighter “we might get caught/exposed” stakes?
+            <strong class="conf">(17) Do you want the ensemble to be a team that already exists, or is it
+            okay if strangers get pulled into the same danger/mystery?</strong>
+            <strong class="conf">(18) Are you still set on US-made productions, or would you accept US/UK
+            co-productions if they otherwise match perfectly?</strong></p>
+          </div>
+          <div class="t-turn">
+            <span class="t-label">Turn 6</span>
+            <p><strong class="conf">(19) Does the “survival/on-the-run” requirement need to be explicitly
+            tagged as “survival,” or is it enough that the overview implies the characters are being
+            targeted or chased?</strong>
+            <strong class="conf">(20) How strict should the box-office floor be if revenue is sometimes
+            missing — must it be listed and at least about $13 million, or can it be missing as long as
+            other indicators of success are present?</strong></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCS CTA -->
+  <section>
+    <div class="wrap" style="text-align:center;">
+      <div class="section-head" style="margin:0 auto;">
+        <div class="kicker">Get started</div>
+        <h2>Evaluate your own agent or model</h2>
+        <p style="margin-left:auto;margin-right:auto;">
+          The <code>coshop</code> Python package provides dataset loading, simulated CoPref users,
+          retrieval tools, and metrics. Full API reference is generated from the source docstrings.
+        </p>
+      </div>
+      <div class="cta" style="justify-content:center;">
+        <a class="btn btn-primary" href="api/">API documentation</a>
+        <a class="btn btn-ghost" href="https://github.com/i-gao/coshop">GitHub repository</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITATION -->
+  <section id="cite" class="alt">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">Citation</div></div>
+<pre class="cite">@misc{saracay2026beyond,
+  title={Beyond expert users: agents should help users construct preferences, not just elicit them}, 
+  author={Irena Saracay and Ludwig Schmidt and Carlos Guestrin},
+  year={2026},
+  archivePrefix={arXiv},
+  primaryClass={cs.AI},
+}</pre>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <a href="paper.pdf" target="_blank" rel="noopener">Paper</a> ·
+        <a href="https://github.com/i-gao/coshop">Code</a> ·
+        <a href="api/">Docs</a> ·
+        <a href="https://i-gao.github.io/">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/dataset-explorer.js"></script>
+</body>
+</html>

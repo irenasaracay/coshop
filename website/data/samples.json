@@ -1,0 +1,3600 @@
+{
+  "domains": [
+    {
+      "name": "hm",
+      "label": "H&M",
+      "domain": "Fashion / e-commerce",
+      "stats": {
+        "Test users": "100",
+        "Catalog size": "37,570",
+        "Initial state size": "3.92 (6.05)",
+        "Number of search features": "6.11 (6.84)",
+        "Number of experience features": "21.47 (7.33)",
+        "Number of credence features": "9.11 (7.42)"
+      },
+      "specs": [
+        {
+          "spec_index": 0,
+          "initial_query": "jacket",
+          "target": {
+            "id": "903326005",
+            "name": "Bert Relaxed Printed Tee"
+          },
+          "initial_state": [
+            {
+              "name": "product_type_name",
+              "label": "Product category",
+              "value": "T-shirt"
+            }
+          ],
+          "sec_split": {
+            "search": [
+              {
+                "name": "age",
+                "label": "Age group (target age category: adult, child, infant)",
+                "value": "adult"
+              },
+              {
+                "name": "gender",
+                "label": "Gender (target gender of the garment: female, male, unisex)",
+                "value": "male"
+              },
+              {
+                "name": "graphical_appearance_name",
+                "label": "Pattern",
+                "value": "Placement print"
+              },
+              {
+                "name": "pattern_type",
+                "label": "Pattern type (dominant visual pattern or colour arrangement, e.g. solid, stripe, floral, plaid/check, animal print, melange, colour block, camouflage, polka dots)",
+                "value": "placement print"
+              },
+              {
+                "name": "target_lifestyle_style",
+                "label": "Style intent (intended lifestyle or use context, e.g. athletic, outdoor, streetwear, loungewear/nightwear, everyday basic, occasion/formal)",
+                "value": "streetwear"
+              }
+            ],
+            "experience": [
+              {
+                "name": "colour_group_name",
+                "label": "Color",
+                "value": "Light Beige"
+              },
+              {
+                "name": "has_pockets",
+                "label": "Has pockets (any pockets present on the garment)",
+                "value": "no"
+              },
+              {
+                "name": "has_embroidery",
+                "label": "Has embroidery (embroidered decoration present)",
+                "value": "no"
+              },
+              {
+                "name": "formality",
+                "label": "Formality level (e.g. casual, smart casual, formal)",
+                "value": "casual"
+              },
+              {
+                "name": "has_drawstring",
+                "label": "Has drawstring",
+                "value": "no"
+              },
+              {
+                "name": "graphic_type",
+                "label": "Graphic type (nature of applied decoration, e.g. print motif, all-over print, logo, embroidery, sequin, appliqué, text/slogan, glitter)",
+                "value": "print motif"
+              },
+              {
+                "name": "has_hood",
+                "label": "Has hood (whether the garment has a hood, derived from neckline)",
+                "value": "no"
+              },
+              {
+                "name": "is_wrap_style",
+                "label": "Wrap style (garment that wraps and ties rather than closing with a fixed fastening)",
+                "value": "no"
+              },
+              {
+                "name": "has_detachable_hood",
+                "label": "Has detachable hood (hood that can be removed)",
+                "value": "no"
+              },
+              {
+                "name": "graphic_text_presence",
+                "label": "Has text or slogan graphic (whether a prominent text or wording is part of the decoration)",
+                "value": "no"
+              },
+              {
+                "name": "waterproof",
+                "label": "Waterproof or water-resistant (quick-filter boolean)",
+                "value": "no"
+              },
+              {
+                "name": "is_sport",
+                "label": "Sportswear (whether the garment is marketed as sportswear or activewear)",
+                "value": "no"
+              }
+            ],
+            "credence": [
+              {
+                "name": "price",
+                "label": "Price",
+                "value": "25.41"
+              },
+              {
+                "name": "material",
+                "label": "Fabric composition (fibre content detected in description or tags, e.g. cotton, polyester, wool, linen, silk, lyocell)",
+                "value": "cotton"
+              },
+              {
+                "name": "has_yoke_panel",
+                "label": "Has yoke panel (structured panel across the upper back or shoulders)",
+                "value": "no"
+              },
+              {
+                "name": "toxin_free",
+                "label": "Toxin-free certification (e.g. OEKO-TEX, bluesign)",
+                "value": "no"
+              },
+              {
+                "name": "vegan",
+                "label": "Vegan (no animal-derived materials; false if wool, silk, leather, down etc. are present)",
+                "value": "no"
+              },
+              {
+                "name": "is_sustainable",
+                "label": "Sustainable (whether the garment uses sustainable materials or certifications, e.g. organic cotton, recycled polyester, Tencel, GOTS)",
+                "value": "no"
+              },
+              {
+                "name": "is_woven_fabric",
+                "label": "Woven fabric (true if the main fabric is woven, false if knit/jersey/fleece, null if indeterminate)",
+                "value": "no"
+              }
+            ]
+          }
+        },
+        {
+          "spec_index": 1,
+          "initial_query": "dress",
+          "target": {
+            "id": "946748003",
+            "name": "Louie solid"
+          },
+          "initial_state": [
+            {
+              "name": "product_type_name",
+              "label": "Product category",
+              "value": "Sweater"
+            }
+          ],
+          "sec_split": {
+            "search": [
+              {
+                "name": "gender",
+                "label": "Gender (target gender of the garment: female, male, unisex)",
+                "value": "female"
+              },
+              {
+                "name": "age",
+                "label": "Age group (target age category: adult, child, infant)",
+                "value": "adult"
+              },
+              {
+                "name": "has_ribbing",
+                "label": "Has structural ribbing (ribbing at cuffs, hems, waistbands or as a fabric panel; excludes decorative neckline trim)",
+                "value": "yes"
+              },
+              {
+                "name": "hem_detail",
+                "label": "Hem treatment (construction or shape of the hem, e.g. ribbed, raw-edge, scalloped, ruffled, flared, asymmetric, curved, straight-cut, elasticated, smocked)",
+                "value": "ribbed"
+              },
+              {
+                "name": "sleeve_cuff_detail",
+                "label": "Cuff construction (detail at the end of the sleeve, e.g. ribbed, elasticated, buttoned, thumbhole, tab-and-button, turn-up, adjustable)",
+                "value": "ribbed"
+              },
+              {
+                "name": "shoulder_style",
+                "label": "Shoulder construction (structural shoulder cut, e.g. dropped, raglan)",
+                "value": "dropped"
+              },
+              {
+                "name": "fabric_surface_effect",
+                "label": "Fabric surface finish (visual or tactile surface quality, e.g. satin sheen, brushed, creped, crinkled, washed)",
+                "value": "brushed"
+              }
+            ],
+            "experience": [
+              {
+                "name": "target_lifestyle_style",
+                "label": "Style intent (intended lifestyle or use context, e.g. athletic, outdoor, streetwear, loungewear/nightwear, everyday basic, occasion/formal)",
+                "value": "everyday basic"
+              },
+              {
+                "name": "perceived_colour_master_name",
+                "label": "Color family",
+                "value": "Grey"
+              },
+              {
+                "name": "has_pockets",
+                "label": "Has pockets (any pockets present on the garment)",
+                "value": "no"
+              },
+              {
+                "name": "has_drawstring",
+                "label": "Has drawstring",
+                "value": "no"
+              },
+              {
+                "name": "has_hood",
+                "label": "Has hood (whether the garment has a hood, derived from neckline)",
+                "value": "no"
+              },
+              {
+                "name": "is_sport",
+                "label": "Sportswear (whether the garment is marketed as sportswear or activewear)",
+                "value": "no"
+              },
+              {
+                "name": "sleeve_length",
+                "label": "Sleeve length (e.g. sleeveless, cap, short, 3/4, long)",
+                "value": "long"
+              },
+              {
+                "name": "windproof",
+                "label": "Windproof or wind-resistant (quick-filter boolean)",
+                "value": "no"
+              },
+              {
+                "name": "has_detachable_hood",
+                "label": "Has detachable hood (hood that can be removed)",
+                "value": "no"
+              },
+              {
+                "name": "has_lining",
+                "label": "Has lining (whether the garment has any internal lining)",
+                "value": "no"
+              },
+              {
+                "name": "formality",
+                "label": "Formality level (e.g. casual, smart casual, formal)",
+                "value": "casual"
+              },
+              {
+                "name": "graphic_text_presence",
+                "label": "Has text or slogan graphic (whether a prominent text or wording is part of the decoration)",
+                "value": "no"
+              }
+            ],
+            "credence": [
+              {
+                "name": "colour_group_name",
+                "label": "Color",
+                "value": "Light Grey"
+              },
+              {
+                "name": "material",
+                "label": "Fabric composition (fibre content detected in description or tags, e.g. cotton, polyester, wool, linen, silk, lyocell)",
+                "value": "cotton, polyester"
+              },
+              {
+                "name": "price",
+                "label": "Price",
+                "value": "25.41"
+              },
+              {
+                "name": "pattern_type",
+                "label": "Pattern type (dominant visual pattern or colour arrangement, e.g. solid, stripe, floral, plaid/check, animal print, melange, colour block, camouflage, polka dots)",
+                "value": "melange"
+              },
+              {
+                "name": "graphical_appearance_name",
+                "label": "Pattern",
+                "value": "Melange"
+              },
+              {
+                "name": "is_sustainable",
+                "label": "Sustainable (whether the garment uses sustainable materials or certifications, e.g. organic cotton, recycled polyester, Tencel, GOTS)",
+                "value": "yes"
+              },
+              {
+                "name": "has_yoke_panel",
+                "label": "Has yoke panel (structured panel across the upper back or shoulders)",
+                "value": "no"
+              },
+              {
+                "name": "toxin_free",
+                "label": "Toxin-free certification (e.g. OEKO-TEX, bluesign)",
+                "value": "no"
+              },
+              {
+                "name": "vegan",
+                "label": "Vegan (no animal-derived materials; false if wool, silk, leather, down etc. are present)",
+                "value": "no"
+              },
+              {
+                "name": "is_woven_fabric",
+                "label": "Woven fabric (true if the main fabric is woven, false if knit/jersey/fleece, null if indeterminate)",
+                "value": "no"
+              }
+            ]
+          }
+        },
+        {
+          "spec_index": 2,
+          "initial_query": "Sweater",
+          "target": {
+            "id": "935858001",
+            "name": "Piper sweatshirt"
+          },
+          "initial_state": [
+            {
+              "name": "product_type_name",
+              "label": "Product category",
+              "value": "Sweater"
+            }
+          ],
+          "sec_split": {
+            "search": [
+              {
+                "name": "gender",
+                "label": "Gender (target gender of the garment: female, male, unisex)",
+                "value": "unisex"
+              },
+              {
+                "name": "age",
+                "label": "Age group (target age category: adult, child, infant)",
+                "value": "adult"
+              },
+              {
+                "name": "shoulder_style",
+                "label": "Shoulder construction (structural shoulder cut, e.g. dropped, raglan)",
+                "value": "dropped"
+              },
+              {
+                "name": "decorative_trim_type",
+                "label": "Decorative trim (type of ornamental trim applied to edges or seams, e.g. frill trim, lace trim, flounce, ruffle, scalloped, faux fur trim, broderie anglaise)",
+                "value": "frill trim"
+              },
+              {
+                "name": "sleeve_style",
+                "label": "Sleeve design (distinctive sleeve cut or shape, e.g. puff, raglan, wide, butterfly, trumpet, gathered)",
+                "value": "wide"
+              }
+            ],
+            "experience": [
+              {
+                "name": "sleeve_cuff_detail",
+                "label": "Cuff construction (detail at the end of the sleeve, e.g. ribbed, elasticated, buttoned, thumbhole, tab-and-button, turn-up, adjustable)",
+                "value": "ribbed"
+              },
+              {
+                "name": "has_ribbing",
+                "label": "Has structural ribbing (ribbing at cuffs, hems, waistbands or as a fabric panel; excludes decorative neckline trim)",
+                "value": "yes"
+              },
+              {
+                "name": "is_sport",
+                "label": "Sportswear (whether the garment is marketed as sportswear or activewear)",
+                "value": "no"
+              },
+              {
+                "name": "is_wrap_style",
+                "label": "Wrap style (garment that wraps and ties rather than closing with a fixed fastening)",
+                "value": "no"
+              },
+              {
+                "name": "formality",
+                "label": "Formality level (e.g. casual, smart casual, formal)",
+                "value": "casual"
+              },
+              {
+                "name": "graphic_text_presence",
+                "label": "Has text or slogan graphic (whether a prominent text or wording is part of the decoration)",
+                "value": "no"
+              },
+              {
+                "name": "has_lining",
+                "label": "Has lining (whether the garment has any internal lining)",
+                "value": "no"
+              },
+              {
+                "name": "waterproof",
+                "label": "Waterproof or water-resistant (quick-filter boolean)",
+                "value": "no"
+              },
+              {
+                "name": "has_sequins",
+                "label": "Has sequins or glitter embellishment",
+                "value": "no"
+              },
+              {
+                "name": "target_lifestyle_style",
+                "label": "Style intent (intended lifestyle or use context, e.g. athletic, outdoor, streetwear, loungewear/nightwear, everyday basic, occasion/formal)",
+                "value": "everyday basic"
+              },
+              {
+                "name": "has_detachable_hood",
+                "label": "Has detachable hood (hood that can be removed)",
+                "value": "no"
+              },
+              {
+                "name": "windproof",
+                "label": "Windproof or wind-resistant (quick-filter boolean)",
+                "value": "no"
+              }
+            ],
+            "credence": [
+              {
+                "name": "neckline",
+                "label": "Neckline or collar (e.g. crew/round neck, V-neck, hooded, collared, off-shoulder, stand-up collar, turtleneck, funnel neck)",
+                "value": "frill collar"
+              },
+              {
+                "name": "price",
+                "label": "Price",
+                "value": "16.93"
+              },
+              {
+                "name": "is_woven_fabric",
+                "label": "Woven fabric (true if the main fabric is woven, false if knit/jersey/fleece, null if indeterminate)",
+                "value": "no"
+              },
+              {
+                "name": "is_sustainable",
+                "label": "Sustainable (whether the garment uses sustainable materials or certifications, e.g. organic cotton, recycled polyester, Tencel, GOTS)",
+                "value": "yes"
+              },
+              {
+                "name": "vegan",
+                "label": "Vegan (no animal-derived materials; false if wool, silk, leather, down etc. are present)",
+                "value": "no"
+              },
+              {
+                "name": "toxin_free",
+                "label": "Toxin-free certification (e.g. OEKO-TEX, bluesign)",
+                "value": "no"
+              },
+              {
+                "name": "has_yoke_panel",
+                "label": "Has yoke panel (structured panel across the upper back or shoulders)",
+                "value": "no"
+              },
+              {
+                "name": "material",
+                "label": "Fabric composition (fibre content detected in description or tags, e.g. cotton, polyester, wool, linen, silk, lyocell)",
+                "value": "polyester"
+              }
+            ]
+          }
+        }
+      ],
+      "sec_distribution": [
+        {
+          "name": "colour_group_name",
+          "label": "Color",
+          "n": 100,
+          "search": 0.26,
+          "experience": 0.45,
+          "credence": 0.29
+        },
+        {
+          "name": "perceived_colour_master_name",
+          "label": "Color family",
+          "n": 100,
+          "search": 0.25,
+          "experience": 0.56,
+          "credence": 0.19
+        },
+        {
+          "name": "price",
+          "label": "Price",
+          "n": 100,
+          "search": 0.14,
+          "experience": 0.6,
+          "credence": 0.26
+        },
+        {
+          "name": "neckline",
+          "label": "Neckline or collar (e.g. crew/round neck, V-neck, hooded, collared, off-shoulder, stand-up collar, turtleneck, funnel neck)",
+          "n": 82,
+          "search": 0.329,
+          "experience": 0.524,
+          "credence": 0.146
+        },
+        {
+          "name": "skirt_pleating",
+          "label": "Has pleating (for garments with a skirt portion: whether the skirt is pleated)",
+          "n": 52,
+          "search": 0.308,
+          "experience": 0.538,
+          "credence": 0.154
+        },
+        {
+          "name": "pattern_type",
+          "label": "Pattern type (dominant visual pattern or colour arrangement, e.g. solid, stripe, floral, plaid/check, animal print, melange, colour block, camouflage, polka dots)",
+          "n": 100,
+          "search": 0.14,
+          "experience": 0.77,
+          "credence": 0.09
+        },
+        {
+          "name": "dress_length",
+          "label": "Dress or skirt length (for full-body garments with a skirt portion: e.g. short, mini, midi, maxi, knee-length, calf-length, ankle-length)",
+          "n": 47,
+          "search": 0.532,
+          "experience": 0.234,
+          "credence": 0.234
+        },
+        {
+          "name": "closure",
+          "label": "Closure type (primary fastening mechanism, e.g. zip, full front zip, button, snap/press-stud, hook-and-eye, toggle, lace)",
+          "n": 40,
+          "search": 0.2,
+          "experience": 0.475,
+          "credence": 0.325
+        },
+        {
+          "name": "sleeve_cuff_detail",
+          "label": "Cuff construction (detail at the end of the sleeve, e.g. ribbed, elasticated, buttoned, thumbhole, tab-and-button, turn-up, adjustable)",
+          "n": 32,
+          "search": 0.312,
+          "experience": 0.344,
+          "credence": 0.344
+        },
+        {
+          "name": "graphical_appearance_name",
+          "label": "Pattern",
+          "n": 100,
+          "search": 0.12,
+          "experience": 0.8,
+          "credence": 0.08
+        },
+        {
+          "name": "silhouette_shape",
+          "label": "Overall silhouette (garment outline shape, e.g. boxy, A-line, straight-cut, bodycon, peplum, flowing, fitted, draped, tailored)",
+          "n": 32,
+          "search": 0.375,
+          "experience": 0.406,
+          "credence": 0.219
+        },
+        {
+          "name": "hem_detail",
+          "label": "Hem treatment (construction or shape of the hem, e.g. ribbed, raw-edge, scalloped, ruffled, flared, asymmetric, curved, straight-cut, elasticated, smocked)",
+          "n": 29,
+          "search": 0.379,
+          "experience": 0.379,
+          "credence": 0.241
+        },
+        {
+          "name": "sleeve_length",
+          "label": "Sleeve length (e.g. sleeveless, cap, short, 3/4, long)",
+          "n": 79,
+          "search": 0.114,
+          "experience": 0.785,
+          "credence": 0.101
+        },
+        {
+          "name": "skirt_shape",
+          "label": "Skirt silhouette (for garments with a skirt portion: overall shape or structure, e.g. A-line, tiered, flared, pleated, straight, wrap, bodycon, flowing)",
+          "n": 30,
+          "search": 0.3,
+          "experience": 0.433,
+          "credence": 0.267
+        },
+        {
+          "name": "sleeve_style",
+          "label": "Sleeve design (distinctive sleeve cut or shape, e.g. puff, raglan, wide, butterfly, trumpet, gathered)",
+          "n": 29,
+          "search": 0.172,
+          "experience": 0.414,
+          "credence": 0.414
+        },
+        {
+          "name": "fit",
+          "label": "Fit (overall silhouette fit, e.g. slim, regular, relaxed, oversized, fitted, loose, muscle, bodycon)",
+          "n": 50,
+          "search": 0.14,
+          "experience": 0.68,
+          "credence": 0.18
+        },
+        {
+          "name": "back_detailing",
+          "label": "Back-specific construction details (e.g. back pleat, longer back hem, back opening, back yoke, elasticated back, back tie, back vent, back darts)",
+          "n": 32,
+          "search": 0.125,
+          "experience": 0.344,
+          "credence": 0.531
+        },
+        {
+          "name": "jacket_type",
+          "label": "Jacket or outerwear type (e.g. bomber, parka, puffer, trench coat, blazer, denim jacket, faux fur coat, shirt jacket, windbreaker)",
+          "n": 18,
+          "search": 0.444,
+          "experience": 0.167,
+          "credence": 0.389
+        },
+        {
+          "name": "graphic_placement",
+          "label": "Graphic location (where the graphic appears on the garment, e.g. chest, sleeve, back, front, all-over)",
+          "n": 28,
+          "search": 0.179,
+          "experience": 0.679,
+          "credence": 0.143
+        },
+        {
+          "name": "decorative_trim_type",
+          "label": "Decorative trim (type of ornamental trim applied to edges or seams, e.g. frill trim, lace trim, flounce, ruffle, scalloped, faux fur trim, broderie anglaise)",
+          "n": 19,
+          "search": 0.263,
+          "experience": 0.211,
+          "credence": 0.526
+        },
+        {
+          "name": "pocket_type",
+          "label": "Pocket style (configuration of pockets, e.g. kangaroo, side seam, welt, flap, patch, chest, zipped, cargo)",
+          "n": 15,
+          "search": 0.2,
+          "experience": 0.4,
+          "credence": 0.4
+        },
+        {
+          "name": "fabric_surface_effect",
+          "label": "Fabric surface finish (visual or tactile surface quality, e.g. satin sheen, brushed, creped, crinkled, washed)",
+          "n": 14,
+          "search": 0.429,
+          "experience": 0.286,
+          "credence": 0.286
+        },
+        {
+          "name": "shoulder_style",
+          "label": "Shoulder construction (structural shoulder cut, e.g. dropped, raglan)",
+          "n": 25,
+          "search": 0.2,
+          "experience": 0.68,
+          "credence": 0.12
+        },
+        {
+          "name": "target_lifestyle_style",
+          "label": "Style intent (intended lifestyle or use context, e.g. athletic, outdoor, streetwear, loungewear/nightwear, everyday basic, occasion/formal)",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.92,
+          "credence": 0.06
+        },
+        {
+          "name": "pocket_location",
+          "label": "Pocket location (where pockets are positioned, e.g. side, front, back, chest)",
+          "n": 17,
+          "search": 0.059,
+          "experience": 0.588,
+          "credence": 0.353
+        },
+        {
+          "name": "waist_styling",
+          "label": "Waist decorative styling (ornamental waist detail beyond the construction method, e.g. detachable belt, self-tie belt, cinched, sewn-on tie belt)",
+          "n": 16,
+          "search": 0.562,
+          "experience": 0.125,
+          "credence": 0.312
+        },
+        {
+          "name": "surface_texture",
+          "label": "Structural surface texture (fabric construction texture, e.g. quilted, mesh, ribbed, piqué, creped, crinkled)",
+          "n": 13,
+          "search": 0.462,
+          "experience": 0.154,
+          "credence": 0.385
+        },
+        {
+          "name": "garment_length_category",
+          "label": "Relative garment length (overall length category, e.g. cropped, extended/longline, regular with longer back hem)",
+          "n": 12,
+          "search": 0.167,
+          "experience": 0.417,
+          "credence": 0.417
+        },
+        {
+          "name": "has_pockets",
+          "label": "Has pockets (any pockets present on the garment)",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.93,
+          "credence": 0.06
+        },
+        {
+          "name": "formality",
+          "label": "Formality level (e.g. casual, smart casual, formal)",
+          "n": 100,
+          "search": 0.04,
+          "experience": 0.93,
+          "credence": 0.03
+        },
+        {
+          "name": "has_ribbing",
+          "label": "Has structural ribbing (ribbing at cuffs, hems, waistbands or as a fabric panel; excludes decorative neckline trim)",
+          "n": 100,
+          "search": 0.04,
+          "experience": 0.93,
+          "credence": 0.03
+        },
+        {
+          "name": "interior_finish",
+          "label": "Interior finish (detail of the lining or inside treatment, e.g. lined, unlined, brushed, thermal lining, faux shearling)",
+          "n": 23,
+          "search": 0.13,
+          "experience": 0.739,
+          "credence": 0.13
+        },
+        {
+          "name": "is_sport",
+          "label": "Sportswear (whether the garment is marketed as sportswear or activewear)",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.95,
+          "credence": 0.04
+        },
+        {
+          "name": "graphic_theme",
+          "label": "Graphic subject matter (theme of the graphic or print, e.g. animals, floral, space/fantasy, vehicles, geometric, text/slogan, nature/nautical)",
+          "n": 19,
+          "search": 0.053,
+          "experience": 0.737,
+          "credence": 0.211
+        },
+        {
+          "name": "side_features",
+          "label": "Side construction details (features running along the side seam, e.g. side zipper, side slit, side seam pocket, wrapover side panel, ribbed panel)",
+          "n": 7,
+          "search": 0.143,
+          "experience": 0.429,
+          "credence": 0.429
+        },
+        {
+          "name": "has_drawstring",
+          "label": "Has drawstring",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.97,
+          "credence": 0.01
+        },
+        {
+          "name": "has_hood",
+          "label": "Has hood (whether the garment has a hood, derived from neckline)",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.97,
+          "credence": 0.01
+        },
+        {
+          "name": "has_lining",
+          "label": "Has lining (whether the garment has any internal lining)",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.97,
+          "credence": 0.02
+        },
+        {
+          "name": "is_wrap_style",
+          "label": "Wrap style (garment that wraps and ties rather than closing with a fixed fastening)",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.98,
+          "credence": 0.0
+        },
+        {
+          "name": "graphic_type",
+          "label": "Graphic type (nature of applied decoration, e.g. print motif, all-over print, logo, embroidery, sequin, appliqué, text/slogan, glitter)",
+          "n": 4,
+          "search": 0.25,
+          "experience": 0.25,
+          "credence": 0.5
+        },
+        {
+          "name": "has_embroidery",
+          "label": "Has embroidery (embroidered decoration present)",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.99,
+          "credence": 0.0
+        },
+        {
+          "name": "strap_configuration",
+          "label": "Strap design (shoulder strap style, e.g. adjustable straps, narrow/spaghetti straps, wide straps)",
+          "n": 2,
+          "search": 0.5,
+          "experience": 0.0,
+          "credence": 0.5
+        },
+        {
+          "name": "age",
+          "label": "Age group (target age category: adult, child, infant)",
+          "n": 100,
+          "search": 1.0,
+          "experience": 0.0,
+          "credence": 0.0
+        },
+        {
+          "name": "gender",
+          "label": "Gender (target gender of the garment: female, male, unisex)",
+          "n": 100,
+          "search": 1.0,
+          "experience": 0.0,
+          "credence": 0.0
+        },
+        {
+          "name": "product_type_name",
+          "label": "Product category",
+          "n": 100,
+          "search": 1.0,
+          "experience": 0.0,
+          "credence": 0.0
+        },
+        {
+          "name": "has_detachable_hood",
+          "label": "Has detachable hood (hood that can be removed)",
+          "n": 100,
+          "search": 0.0,
+          "experience": 1.0,
+          "credence": 0.0
+        },
+        {
+          "name": "graphic_text_presence",
+          "label": "Has text or slogan graphic (whether a prominent text or wording is part of the decoration)",
+          "n": 100,
+          "search": 0.0,
+          "experience": 1.0,
+          "credence": 0.0
+        },
+        {
+          "name": "waterproof",
+          "label": "Waterproof or water-resistant (quick-filter boolean)",
+          "n": 100,
+          "search": 0.0,
+          "experience": 1.0,
+          "credence": 0.0
+        },
+        {
+          "name": "has_sequins",
+          "label": "Has sequins or glitter embellishment",
+          "n": 100,
+          "search": 0.0,
+          "experience": 1.0,
+          "credence": 0.0
+        },
+        {
+          "name": "windproof",
+          "label": "Windproof or wind-resistant (quick-filter boolean)",
+          "n": 100,
+          "search": 0.0,
+          "experience": 1.0,
+          "credence": 0.0
+        },
+        {
+          "name": "has_yoke_panel",
+          "label": "Has yoke panel (structured panel across the upper back or shoulders)",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "toxin_free",
+          "label": "Toxin-free certification (e.g. OEKO-TEX, bluesign)",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "vegan",
+          "label": "Vegan (no animal-derived materials; false if wool, silk, leather, down etc. are present)",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "is_sustainable",
+          "label": "Sustainable (whether the garment uses sustainable materials or certifications, e.g. organic cotton, recycled polyester, Tencel, GOTS)",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "is_woven_fabric",
+          "label": "Woven fabric (true if the main fabric is woven, false if knit/jersey/fleece, null if indeterminate)",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "material",
+          "label": "Fabric composition (fibre content detected in description or tags, e.g. cotton, polyester, wool, linen, silk, lyocell)",
+          "n": 63,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "waist_treatment",
+          "label": "Waist construction method (how the waist opening is structured or adjusted, e.g. elasticated, drawstring, smocked, gathered, seamed)",
+          "n": 19,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "bodice_style",
+          "label": "Bodice construction (for dresses: upper-body construction style, e.g. wrap, fitted, smocked)",
+          "n": 5,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "functional_finish",
+          "label": "Functional performance finish (performance treatment or feature, e.g. water-repellent, fast-drying, wrinkle-resistant, thermal, breathable, UV protection, reflective)",
+          "n": 4,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "graphic_scale",
+          "label": "Graphic size (relative scale of the graphic, e.g. small, large)",
+          "n": 4,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "shoulder_exposure_style",
+          "label": "Shoulder exposure (degree of shoulder baring, e.g. off-shoulder, cold-shoulder, one-shoulder, halter)",
+          "n": 3,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "nursing_access_design",
+          "label": "Nursing or maternity design (special construction for nursing access, or garment marketed as maternity wear)",
+          "n": 3,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "has_logo_or_brand_mark",
+          "label": "Brand mark presence (location of brand identifier, e.g. chest logo, sleeve logo, brand tag)",
+          "n": 2,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        }
+      ]
+    },
+    {
+      "name": "movielens",
+      "label": "MovieLens",
+      "domain": "Movie recommendation",
+      "stats": {
+        "Test users": "100",
+        "Catalog size": "26,637",
+        "Initial state size": "1.67 (1.20)",
+        "Number of search features": "8.60 (16.74)",
+        "Number of experience features": "70.20 (12.72)",
+        "Number of credence features": "8.79 (2.35)"
+      },
+      "specs": [
+        {
+          "spec_index": 0,
+          "initial_query": "Fantasy Animation Family",
+          "target": {
+            "id": "5971",
+            "name": "My Neighbor Totoro (Tonari no Totoro)"
+          },
+          "initial_state": [
+            {
+              "name": "genres",
+              "label": "Genres of the movie",
+              "value": "Fantasy, Animation, Family"
+            }
+          ],
+          "sec_split": {
+            "search": [
+              {
+                "name": "family",
+                "label": "Whether family dynamics are a central theme",
+                "value": "yes"
+              },
+              {
+                "name": "on_DVD",
+                "label": "Whether the film has been released on a physical home media format (DVD, VHS, Blu-ray, Betamax, LaserDisc, etc.)",
+                "value": "yes"
+              },
+              {
+                "name": "music",
+                "label": "Whether music is a significant thematic or narrative element (distinct from the musical genre)",
+                "value": "yes"
+              },
+              {
+                "name": "supernatural",
+                "label": "Whether the film has supernatural elements such as ghosts, monsters, vampires, or demons",
+                "value": "yes"
+              },
+              {
+                "name": "fantasy",
+                "label": "Whether the film is a fantasy, including magical realism and supernatural fantasy",
+                "value": "yes"
+              },
+              {
+                "name": "popularity",
+                "label": "Popularity score of the movie (higher is more popular)",
+                "value": "13.507299"
+              },
+              {
+                "name": "vote_count",
+                "label": "Number of ratings for the movie",
+                "value": "1730"
+              }
+            ],
+            "experience": [
+              {
+                "name": "sci_fi",
+                "label": "Whether the film is science fiction",
+                "value": "no"
+              },
+              {
+                "name": "action",
+                "label": "Whether the film is an action film",
+                "value": "no"
+              },
+              {
+                "name": "adventure",
+                "label": "Whether the film is an adventure film",
+                "value": "no"
+              },
+              {
+                "name": "thriller",
+                "label": "Whether the film is a thriller",
+                "value": "no"
+              },
+              {
+                "name": "on_bluray",
+                "label": "Whether the film has been released on Blu-ray",
+                "value": "no"
+              },
+              {
+                "name": "violence",
+                "label": "Whether the film contains significant violence or gore",
+                "value": "no"
+              },
+              {
+                "name": "sequel_or_franchise",
+                "label": "Whether the film is a sequel or part of a franchise",
+                "value": "no"
+              },
+              {
+                "name": "nudity",
+                "label": "Whether the film contains nudity",
+                "value": "no"
+              },
+              {
+                "name": "dystopian",
+                "label": "Whether the film is set in a dystopian or post-apocalyptic world",
+                "value": "no"
+              },
+              {
+                "name": "horror",
+                "label": "Whether the film is a horror film",
+                "value": "no"
+              },
+              {
+                "name": "mystery",
+                "label": "Whether the film is a mystery, including detective stories and investigations",
+                "value": "no"
+              },
+              {
+                "name": "year",
+                "label": "Release year",
+                "value": "1988"
+              }
+            ],
+            "credence": [
+              {
+                "name": "production_companies",
+                "label": "Production companies of the movie",
+                "value": "Studio Ghibli, Nibariki, Tokuma Japan Communications Co. Ltd."
+              },
+              {
+                "name": "animated",
+                "label": "Animation style of the film: 'live_action', 'traditional_animation', 'CGI', 'stop_motion', or 'anime'. Null only when genre is unknown",
+                "value": "anime"
+              },
+              {
+                "name": "runtime",
+                "label": "Runtime of the movie in minutes",
+                "value": "86"
+              },
+              {
+                "name": "belongs_to_collection",
+                "label": "Collections the movie was featured in",
+                "value": "[]"
+              },
+              {
+                "name": "imdb_top_list",
+                "label": "Whether the film appears on an IMDb ranked list such as the IMDb Top 250",
+                "value": "no"
+              },
+              {
+                "name": "national_film_registry",
+                "label": "Whether the film has been selected for the US National Film Registry",
+                "value": "no"
+              },
+              {
+                "name": "bechdel_test",
+                "label": "Whether the film passes or fails the Bechdel Test: 'pass', 'fail', or null if not recorded",
+                "value": "no"
+              }
+            ]
+          }
+        },
+        {
+          "spec_index": 1,
+          "initial_query": "Thriller Drama Mystery",
+          "target": {
+            "id": "912",
+            "name": "Casablanca"
+          },
+          "initial_state": [
+            {
+              "name": "genres",
+              "label": "Genres of the movie",
+              "value": "Drama, Romance"
+            }
+          ],
+          "sec_split": {
+            "search": [
+              {
+                "name": "romance",
+                "label": "Whether the film has significant romantic content",
+                "value": "yes"
+              },
+              {
+                "name": "musical",
+                "label": "Whether the film is a musical",
+                "value": "yes"
+              },
+              {
+                "name": "on_bluray",
+                "label": "Whether the film has been released on Blu-ray",
+                "value": "yes"
+              },
+              {
+                "name": "vote_average",
+                "label": "Average rating of the movie out of 5",
+                "value": "7.9"
+              },
+              {
+                "name": "on_DVD",
+                "label": "Whether the film has been released on a physical home media format (DVD, VHS, Blu-ray, Betamax, LaserDisc, etc.)",
+                "value": "yes"
+              },
+              {
+                "name": "murder",
+                "label": "Whether murder is a significant plot element",
+                "value": "yes"
+              },
+              {
+                "name": "war",
+                "label": "Whether the film is about war or armed conflict",
+                "value": "yes"
+              },
+              {
+                "name": "black_and_white",
+                "label": "Whether the film is shot in black and white",
+                "value": "yes"
+              },
+              {
+                "name": "music",
+                "label": "Whether music is a significant thematic or narrative element (distinct from the musical genre)",
+                "value": "yes"
+              },
+              {
+                "name": "historical",
+                "label": "Whether the film is set in or focused on a historical period",
+                "value": "yes"
+              },
+              {
+                "name": "era",
+                "label": "The decade in which the film is set (e.g. '1970s', '1980s'). Null if not recorded",
+                "value": "2000s"
+              },
+              {
+                "name": "popularity",
+                "label": "Popularity score of the movie (higher is more popular)",
+                "value": "13.916101"
+              }
+            ],
+            "experience": [
+              {
+                "name": "nudity",
+                "label": "Whether the film contains nudity",
+                "value": "no"
+              },
+              {
+                "name": "on_Netflix",
+                "label": "Whether the film is available on Netflix",
+                "value": "no"
+              },
+              {
+                "name": "violence",
+                "label": "Whether the film contains significant violence or gore",
+                "value": "no"
+              },
+              {
+                "name": "comedy",
+                "label": "Whether the film is a comedy",
+                "value": "no"
+              },
+              {
+                "name": "runtime",
+                "label": "Runtime of the movie in minutes",
+                "value": "102"
+              },
+              {
+                "name": "production_countries",
+                "label": "Production countries of the movie",
+                "value": "United States of America"
+              },
+              {
+                "name": "coming_of_age",
+                "label": "Whether the film follows a character's journey into maturity or self-understanding",
+                "value": "no"
+              },
+              {
+                "name": "satire",
+                "label": "Whether the film is satirical or a parody",
+                "value": "no"
+              },
+              {
+                "name": "urban_setting",
+                "label": "Whether the film is set in an urban environment such as a major city",
+                "value": "no"
+              },
+              {
+                "name": "lgbtq",
+                "label": "Whether the film has LGBTQ+ themes or characters",
+                "value": "no"
+              },
+              {
+                "name": "mental_health",
+                "label": "Whether mental health, psychological disorder, or emotional crisis is a significant theme",
+                "value": "no"
+              },
+              {
+                "name": "crime",
+                "label": "Whether the film involves crime as a central element",
+                "value": "no"
+              }
+            ],
+            "credence": [
+              {
+                "name": "year",
+                "label": "Release year",
+                "value": "1942"
+              },
+              {
+                "name": "vote_count",
+                "label": "Number of ratings for the movie",
+                "value": "1462"
+              },
+              {
+                "name": "budget",
+                "label": "Budget of the movie in USD",
+                "value": "878000"
+              },
+              {
+                "name": "revenue",
+                "label": "Revenue of the movie in USD",
+                "value": "10462500"
+              },
+              {
+                "name": "production_companies",
+                "label": "Production companies of the movie",
+                "value": "Warner Bros."
+              },
+              {
+                "name": "spoken_languages",
+                "label": "Languages the movie is available in",
+                "value": "Deutsch, Français, Italiano, English"
+              },
+              {
+                "name": "anti_hero",
+                "label": "Whether the film features an anti-hero as its protagonist",
+                "value": "yes"
+              },
+              {
+                "name": "belongs_to_collection",
+                "label": "Collections the movie was featured in",
+                "value": "[]"
+              },
+              {
+                "name": "bechdel_test",
+                "label": "Whether the film passes or fails the Bechdel Test: 'pass', 'fail', or null if not recorded",
+                "value": "fail"
+              },
+              {
+                "name": "national_film_registry",
+                "label": "Whether the film has been selected for the US National Film Registry",
+                "value": "yes"
+              },
+              {
+                "name": "award_profile",
+                "label": "Highest level of award recognition: 'winner', 'nominated', 'festival_selection', or null if none detected",
+                "value": "winner"
+              },
+              {
+                "name": "imdb_top_list",
+                "label": "Whether the film appears on an IMDb ranked list such as the IMDb Top 250",
+                "value": "yes"
+              }
+            ]
+          }
+        },
+        {
+          "spec_index": 2,
+          "initial_query": "Action Thriller",
+          "target": {
+            "id": "5377",
+            "name": "About a Boy"
+          },
+          "initial_state": [
+            {
+              "name": "genres",
+              "label": "Genres of the movie",
+              "value": "Drama, Comedy, Romance"
+            }
+          ],
+          "sec_split": {
+            "search": [
+              {
+                "name": "family",
+                "label": "Whether family dynamics are a central theme",
+                "value": "yes"
+              },
+              {
+                "name": "production_countries",
+                "label": "Production countries of the movie",
+                "value": "United Kingdom, United States of America"
+              },
+              {
+                "name": "source_material",
+                "label": "The type of source material the film is adapted from: 'book' (novel, memoir, or non-fiction), 'play' (stage play or TV show), or 'true_story' (based on real events). Null if original screenplay or unknown",
+                "value": "book"
+              },
+              {
+                "name": "mental_health",
+                "label": "Whether mental health, psychological disorder, or emotional crisis is a significant theme",
+                "value": "yes"
+              },
+              {
+                "name": "popularity",
+                "label": "Popularity score of the movie (higher is more popular)",
+                "value": "10.956665"
+              },
+              {
+                "name": "coming_of_age",
+                "label": "Whether the film follows a character's journey into maturity or self-understanding",
+                "value": "yes"
+              },
+              {
+                "name": "vote_count",
+                "label": "Number of ratings for the movie",
+                "value": "627"
+              },
+              {
+                "name": "friendship",
+                "label": "Whether friendship is a significant theme, including buddy films and unlikely alliances",
+                "value": "yes"
+              },
+              {
+                "name": "satire",
+                "label": "Whether the film is satirical or a parody",
+                "value": "yes"
+              }
+            ],
+            "experience": [
+              {
+                "name": "violence",
+                "label": "Whether the film contains significant violence or gore",
+                "value": "no"
+              },
+              {
+                "name": "action",
+                "label": "Whether the film is an action film",
+                "value": "no"
+              },
+              {
+                "name": "adventure",
+                "label": "Whether the film is an adventure film",
+                "value": "no"
+              },
+              {
+                "name": "music",
+                "label": "Whether music is a significant thematic or narrative element (distinct from the musical genre)",
+                "value": "no"
+              },
+              {
+                "name": "sci_fi",
+                "label": "Whether the film is science fiction",
+                "value": "no"
+              },
+              {
+                "name": "thriller",
+                "label": "Whether the film is a thriller",
+                "value": "no"
+              },
+              {
+                "name": "on_bluray",
+                "label": "Whether the film has been released on Blu-ray",
+                "value": "no"
+              },
+              {
+                "name": "nudity",
+                "label": "Whether the film contains nudity",
+                "value": "no"
+              },
+              {
+                "name": "fantasy",
+                "label": "Whether the film is a fantasy, including magical realism and supernatural fantasy",
+                "value": "no"
+              },
+              {
+                "name": "mystery",
+                "label": "Whether the film is a mystery, including detective stories and investigations",
+                "value": "no"
+              },
+              {
+                "name": "war",
+                "label": "Whether the film is about war or armed conflict",
+                "value": "no"
+              },
+              {
+                "name": "sequel_or_franchise",
+                "label": "Whether the film is a sequel or part of a franchise",
+                "value": "no"
+              }
+            ],
+            "credence": [
+              {
+                "name": "revenue",
+                "label": "Revenue of the movie in USD",
+                "value": "129000000"
+              },
+              {
+                "name": "year",
+                "label": "Release year",
+                "value": "2002"
+              },
+              {
+                "name": "on_DVD",
+                "label": "Whether the film has been released on a physical home media format (DVD, VHS, Blu-ray, Betamax, LaserDisc, etc.)",
+                "value": "no"
+              },
+              {
+                "name": "imdb_top_list",
+                "label": "Whether the film appears on an IMDb ranked list such as the IMDb Top 250",
+                "value": "no"
+              },
+              {
+                "name": "production_companies",
+                "label": "Production companies of the movie",
+                "value": "Universal Pictures"
+              },
+              {
+                "name": "belongs_to_collection",
+                "label": "Collections the movie was featured in",
+                "value": "[]"
+              },
+              {
+                "name": "national_film_registry",
+                "label": "Whether the film has been selected for the US National Film Registry",
+                "value": "no"
+              },
+              {
+                "name": "bechdel_test",
+                "label": "Whether the film passes or fails the Bechdel Test: 'pass', 'fail', or null if not recorded",
+                "value": "no"
+              },
+              {
+                "name": "budget",
+                "label": "Budget of the movie in USD",
+                "value": "27000000"
+              }
+            ]
+          }
+        }
+      ],
+      "sec_distribution": [
+        {
+          "name": "vote_count",
+          "label": "Number of ratings for the movie",
+          "n": 100,
+          "search": 0.53,
+          "experience": 0.15,
+          "credence": 0.32
+        },
+        {
+          "name": "vote_average",
+          "label": "Average rating of the movie out of 5",
+          "n": 100,
+          "search": 0.55,
+          "experience": 0.35,
+          "credence": 0.1
+        },
+        {
+          "name": "year",
+          "label": "Release year",
+          "n": 100,
+          "search": 0.13,
+          "experience": 0.58,
+          "credence": 0.29
+        },
+        {
+          "name": "on_DVD",
+          "label": "Whether the film has been released on a physical home media format (DVD, VHS, Blu-ray, Betamax, LaserDisc, etc.)",
+          "n": 100,
+          "search": 0.59,
+          "experience": 0.06,
+          "credence": 0.35
+        },
+        {
+          "name": "popularity",
+          "label": "Popularity score of the movie (higher is more popular)",
+          "n": 100,
+          "search": 0.59,
+          "experience": 0.32,
+          "credence": 0.09
+        },
+        {
+          "name": "runtime",
+          "label": "Runtime of the movie in minutes",
+          "n": 100,
+          "search": 0.28,
+          "experience": 0.64,
+          "credence": 0.08
+        },
+        {
+          "name": "production_countries",
+          "label": "Production countries of the movie",
+          "n": 100,
+          "search": 0.14,
+          "experience": 0.65,
+          "credence": 0.21
+        },
+        {
+          "name": "music",
+          "label": "Whether music is a significant thematic or narrative element (distinct from the musical genre)",
+          "n": 100,
+          "search": 0.28,
+          "experience": 0.71,
+          "credence": 0.01
+        },
+        {
+          "name": "spoken_languages",
+          "label": "Languages the movie is available in",
+          "n": 100,
+          "search": 0.05,
+          "experience": 0.72,
+          "credence": 0.23
+        },
+        {
+          "name": "family",
+          "label": "Whether family dynamics are a central theme",
+          "n": 100,
+          "search": 0.23,
+          "experience": 0.76,
+          "credence": 0.01
+        },
+        {
+          "name": "action",
+          "label": "Whether the film is an action film",
+          "n": 100,
+          "search": 0.19,
+          "experience": 0.79,
+          "credence": 0.02
+        },
+        {
+          "name": "nudity",
+          "label": "Whether the film contains nudity",
+          "n": 100,
+          "search": 0.21,
+          "experience": 0.79,
+          "credence": 0.0
+        },
+        {
+          "name": "violence",
+          "label": "Whether the film contains significant violence or gore",
+          "n": 100,
+          "search": 0.18,
+          "experience": 0.82,
+          "credence": 0.0
+        },
+        {
+          "name": "on_bluray",
+          "label": "Whether the film has been released on Blu-ray",
+          "n": 100,
+          "search": 0.17,
+          "experience": 0.83,
+          "credence": 0.0
+        },
+        {
+          "name": "thriller",
+          "label": "Whether the film is a thriller",
+          "n": 100,
+          "search": 0.13,
+          "experience": 0.87,
+          "credence": 0.0
+        },
+        {
+          "name": "on_Netflix",
+          "label": "Whether the film is available on Netflix",
+          "n": 100,
+          "search": 0.12,
+          "experience": 0.88,
+          "credence": 0.0
+        },
+        {
+          "name": "coming_of_age",
+          "label": "Whether the film follows a character's journey into maturity or self-understanding",
+          "n": 100,
+          "search": 0.12,
+          "experience": 0.88,
+          "credence": 0.0
+        },
+        {
+          "name": "murder",
+          "label": "Whether murder is a significant plot element",
+          "n": 100,
+          "search": 0.12,
+          "experience": 0.88,
+          "credence": 0.0
+        },
+        {
+          "name": "crime",
+          "label": "Whether the film involves crime as a central element",
+          "n": 100,
+          "search": 0.12,
+          "experience": 0.88,
+          "credence": 0.0
+        },
+        {
+          "name": "fantasy",
+          "label": "Whether the film is a fantasy, including magical realism and supernatural fantasy",
+          "n": 100,
+          "search": 0.11,
+          "experience": 0.89,
+          "credence": 0.0
+        },
+        {
+          "name": "war",
+          "label": "Whether the film is about war or armed conflict",
+          "n": 100,
+          "search": 0.11,
+          "experience": 0.89,
+          "credence": 0.0
+        },
+        {
+          "name": "satire",
+          "label": "Whether the film is satirical or a parody",
+          "n": 100,
+          "search": 0.11,
+          "experience": 0.89,
+          "credence": 0.0
+        },
+        {
+          "name": "dark_comedy",
+          "label": "Whether the film is a dark comedy or black comedy",
+          "n": 100,
+          "search": 0.11,
+          "experience": 0.89,
+          "credence": 0.0
+        },
+        {
+          "name": "sequel_or_franchise",
+          "label": "Whether the film is a sequel or part of a franchise",
+          "n": 100,
+          "search": 0.1,
+          "experience": 0.9,
+          "credence": 0.0
+        },
+        {
+          "name": "mystery",
+          "label": "Whether the film is a mystery, including detective stories and investigations",
+          "n": 100,
+          "search": 0.1,
+          "experience": 0.9,
+          "credence": 0.0
+        },
+        {
+          "name": "sci_fi",
+          "label": "Whether the film is science fiction",
+          "n": 100,
+          "search": 0.08,
+          "experience": 0.91,
+          "credence": 0.01
+        },
+        {
+          "name": "religion",
+          "label": "Whether the film has religious or spiritual themes",
+          "n": 100,
+          "search": 0.09,
+          "experience": 0.91,
+          "credence": 0.0
+        },
+        {
+          "name": "adventure",
+          "label": "Whether the film is an adventure film",
+          "n": 100,
+          "search": 0.08,
+          "experience": 0.92,
+          "credence": 0.0
+        },
+        {
+          "name": "urban_setting",
+          "label": "Whether the film is set in an urban environment such as a major city",
+          "n": 100,
+          "search": 0.08,
+          "experience": 0.92,
+          "credence": 0.0
+        },
+        {
+          "name": "politics",
+          "label": "Whether the film engages with political themes",
+          "n": 100,
+          "search": 0.08,
+          "experience": 0.92,
+          "credence": 0.0
+        },
+        {
+          "name": "friendship",
+          "label": "Whether friendship is a significant theme, including buddy films and unlikely alliances",
+          "n": 100,
+          "search": 0.08,
+          "experience": 0.92,
+          "credence": 0.0
+        },
+        {
+          "name": "historical",
+          "label": "Whether the film is set in or focused on a historical period",
+          "n": 100,
+          "search": 0.08,
+          "experience": 0.92,
+          "credence": 0.0
+        },
+        {
+          "name": "mental_health",
+          "label": "Whether mental health, psychological disorder, or emotional crisis is a significant theme",
+          "n": 100,
+          "search": 0.07,
+          "experience": 0.93,
+          "credence": 0.0
+        },
+        {
+          "name": "twist_ending",
+          "label": "Whether the film has a significant twist ending",
+          "n": 100,
+          "search": 0.06,
+          "experience": 0.94,
+          "credence": 0.0
+        },
+        {
+          "name": "revenge",
+          "label": "Whether revenge is a significant plot driver",
+          "n": 100,
+          "search": 0.06,
+          "experience": 0.94,
+          "credence": 0.0
+        },
+        {
+          "name": "musical",
+          "label": "Whether the film is a musical",
+          "n": 100,
+          "search": 0.06,
+          "experience": 0.94,
+          "credence": 0.0
+        },
+        {
+          "name": "comedy",
+          "label": "Whether the film is a comedy",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.95,
+          "credence": 0.02
+        },
+        {
+          "name": "remake",
+          "label": "Whether the film is a remake of an earlier work",
+          "n": 100,
+          "search": 0.05,
+          "experience": 0.95,
+          "credence": 0.0
+        },
+        {
+          "name": "high_school",
+          "label": "Whether the film is set in or prominently features a high school",
+          "n": 100,
+          "search": 0.05,
+          "experience": 0.95,
+          "credence": 0.0
+        },
+        {
+          "name": "romance",
+          "label": "Whether the film has significant romantic content",
+          "n": 100,
+          "search": 0.05,
+          "experience": 0.95,
+          "credence": 0.0
+        },
+        {
+          "name": "ensemble_cast",
+          "label": "Whether the film features an ensemble cast rather than a single protagonist",
+          "n": 100,
+          "search": 0.05,
+          "experience": 0.95,
+          "credence": 0.0
+        },
+        {
+          "name": "source_material",
+          "label": "The type of source material the film is adapted from: 'book' (novel, memoir, or non-fiction), 'play' (stage play or TV show), or 'true_story' (based on real events). Null if original screenplay or unknown",
+          "n": 27,
+          "search": 0.815,
+          "experience": 0.185,
+          "credence": 0.0
+        },
+        {
+          "name": "dystopian",
+          "label": "Whether the film is set in a dystopian or post-apocalyptic world",
+          "n": 100,
+          "search": 0.04,
+          "experience": 0.96,
+          "credence": 0.0
+        },
+        {
+          "name": "espionage",
+          "label": "Whether the film involves espionage or spying",
+          "n": 100,
+          "search": 0.04,
+          "experience": 0.96,
+          "credence": 0.0
+        },
+        {
+          "name": "space",
+          "label": "Whether the film is set in or significantly involves outer space",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.97,
+          "credence": 0.0
+        },
+        {
+          "name": "isolation",
+          "label": "Whether isolation — physical, psychological, or social — is a significant theme or setting",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.97,
+          "credence": 0.0
+        },
+        {
+          "name": "sports",
+          "label": "Whether the film is a sports film",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.97,
+          "credence": 0.0
+        },
+        {
+          "name": "female_led",
+          "label": "Whether the film has a female protagonist who drives the plot",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.97,
+          "credence": 0.01
+        },
+        {
+          "name": "conspiracy",
+          "label": "Whether the film involves a conspiracy or cover-up",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.97,
+          "credence": 0.0
+        },
+        {
+          "name": "drugs",
+          "label": "Whether drug use or addiction is a significant theme",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.97,
+          "credence": 0.0
+        },
+        {
+          "name": "black_and_white",
+          "label": "Whether the film is shot in black and white",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.97,
+          "credence": 0.0
+        },
+        {
+          "name": "biographical",
+          "label": "Whether the film is biographical or autobiographical",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.97,
+          "credence": 0.0
+        },
+        {
+          "name": "lgbtq",
+          "label": "Whether the film has LGBTQ+ themes or characters",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.97,
+          "credence": 0.0
+        },
+        {
+          "name": "gangster",
+          "label": "Whether the film involves gangsters, the mob, or organized crime",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.97,
+          "credence": 0.0
+        },
+        {
+          "name": "era",
+          "label": "The decade in which the film is set (e.g. '1970s', '1980s'). Null if not recorded",
+          "n": 40,
+          "search": 0.925,
+          "experience": 0.0,
+          "credence": 0.075
+        },
+        {
+          "name": "supernatural",
+          "label": "Whether the film has supernatural elements such as ghosts, monsters, vampires, or demons",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.98,
+          "credence": 0.0
+        },
+        {
+          "name": "superhero",
+          "label": "Whether the film is a superhero film",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.98,
+          "credence": 0.0
+        },
+        {
+          "name": "time_travel",
+          "label": "Whether the film involves time travel",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.98,
+          "credence": 0.0
+        },
+        {
+          "name": "survival",
+          "label": "Whether survival is a central theme or challenge",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.98,
+          "credence": 0.01
+        },
+        {
+          "name": "terrorism",
+          "label": "Whether terrorism is a significant theme",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.98,
+          "credence": 0.0
+        },
+        {
+          "name": "anti_hero",
+          "label": "Whether the film features an anti-hero as its protagonist",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.98,
+          "credence": 0.01
+        },
+        {
+          "name": "melancholic",
+          "label": "Whether the film has a melancholic tone",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.98,
+          "credence": 0.01
+        },
+        {
+          "name": "racism",
+          "label": "Whether the film addresses racism or racial injustice",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.98,
+          "credence": 0.0
+        },
+        {
+          "name": "psychological_thriller",
+          "label": "Whether the film is a psychological thriller",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.98,
+          "credence": 0.0
+        },
+        {
+          "name": "mockumentary",
+          "label": "Whether the film is a mockumentary",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.98,
+          "credence": 0.01
+        },
+        {
+          "name": "prison",
+          "label": "Whether the film features a prison setting or incarceration as a significant element",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.98,
+          "credence": 0.0
+        },
+        {
+          "name": "horror",
+          "label": "Whether the film is a horror film",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.99,
+          "credence": 0.0
+        },
+        {
+          "name": "zombies",
+          "label": "Whether the film features zombies",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "suburban",
+          "label": "Whether the film is set in suburbia",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.99,
+          "credence": 0.0
+        },
+        {
+          "name": "heist",
+          "label": "Whether the film involves a heist",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.99,
+          "credence": 0.0
+        },
+        {
+          "name": "road_trip",
+          "label": "Whether the film involves a road trip",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "small_town",
+          "label": "Whether the film is set in a small town",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.99,
+          "credence": 0.0
+        },
+        {
+          "name": "western",
+          "label": "Whether the film is a western",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "documentary",
+          "label": "Whether the film is a documentary",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "drama",
+          "label": "Whether the film is a drama",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "genres",
+          "label": "Genres of the movie",
+          "n": 100,
+          "search": 1.0,
+          "experience": 0.0,
+          "credence": 0.0
+        },
+        {
+          "name": "martial_arts",
+          "label": "Whether the film features martial arts",
+          "n": 100,
+          "search": 0.0,
+          "experience": 1.0,
+          "credence": 0.0
+        },
+        {
+          "name": "unrequited_love",
+          "label": "Whether the film features unrequited love",
+          "n": 100,
+          "search": 0.0,
+          "experience": 1.0,
+          "credence": 0.0
+        },
+        {
+          "name": "found_family",
+          "label": "Whether the film features a found family theme",
+          "n": 100,
+          "search": 0.0,
+          "experience": 1.0,
+          "credence": 0.0
+        },
+        {
+          "name": "unlikely_friendship",
+          "label": "Whether the film centers on an unlikely or unexpected friendship",
+          "n": 100,
+          "search": 0.0,
+          "experience": 1.0,
+          "credence": 0.0
+        },
+        {
+          "name": "mentor_protege",
+          "label": "Whether the film features a mentor-protege relationship",
+          "n": 100,
+          "search": 0.0,
+          "experience": 1.0,
+          "credence": 0.0
+        },
+        {
+          "name": "slow_burn",
+          "label": "Whether the film is a slow burn — building tension or emotion gradually over time",
+          "n": 100,
+          "search": 0.0,
+          "experience": 1.0,
+          "credence": 0.0
+        },
+        {
+          "name": "production_companies",
+          "label": "Production companies of the movie",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "belongs_to_collection",
+          "label": "Collections the movie was featured in",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "imdb_top_list",
+          "label": "Whether the film appears on an IMDb ranked list such as the IMDb Top 250",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "national_film_registry",
+          "label": "Whether the film has been selected for the US National Film Registry",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "bechdel_test",
+          "label": "Whether the film passes or fails the Bechdel Test: 'pass', 'fail', or null if not recorded",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "revenue",
+          "label": "Revenue of the movie in USD",
+          "n": 77,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "budget",
+          "label": "Budget of the movie in USD",
+          "n": 70,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "award_profile",
+          "label": "Highest level of award recognition: 'winner', 'nominated', 'festival_selection', or null if none detected",
+          "n": 29,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "format_resolution",
+          "label": "Cinematographic formats used, e.g. ['70mm', 'anamorphic', 'imax', '3d']. Null if none detected",
+          "n": 10,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "animated",
+          "label": "Animation style of the film: 'live_action', 'traditional_animation', 'CGI', 'stop_motion', or 'anime'. Null only when genre is unknown",
+          "n": 6,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        }
+      ]
+    },
+    {
+      "name": "goodreads",
+      "label": "Goodreads",
+      "domain": "Book recommendation",
+      "stats": {
+        "Test users": "100",
+        "Catalog size": "39,050",
+        "Initial state size": "3.76 (11.08)",
+        "Number of search features": "7.76 (11.92)",
+        "Number of experience features": "66.98 (65.22)",
+        "Number of credence features": "13.50 (70.79)"
+      },
+      "specs": [
+        {
+          "spec_index": 3,
+          "initial_query": "children history historical fiction",
+          "target": {
+            "id": "27415447",
+            "name": "The Long Drop"
+          },
+          "initial_state": [
+            {
+              "name": "genres",
+              "label": "Genres of the book",
+              "value": "mystery, thriller, crime, fiction, history, historical fiction, biography"
+            }
+          ],
+          "sec_split": {
+            "search": [
+              {
+                "name": "emotional_tone",
+                "label": "Primary emotional register: dark_or_grim, tense, melancholic, hopeful, humorous, whimsical, cozy_or_warm, bittersweet, angsty",
+                "value": "dark_or_grim"
+              },
+              {
+                "name": "theme_family",
+                "label": "Theme: family relationships and dynamics",
+                "value": "yes"
+              },
+              {
+                "name": "average_rating",
+                "label": "Average rating of the book",
+                "value": "3.33"
+              },
+              {
+                "name": "theme_drama",
+                "label": "Theme: interpersonal drama or emotional conflict",
+                "value": "yes"
+              },
+              {
+                "name": "violence_level",
+                "label": "Level of violence depicted: mild, moderate, or graphic",
+                "value": "moderate"
+              },
+              {
+                "name": "theme_crime",
+                "label": "Theme: crime, murder, or criminal activity",
+                "value": "yes"
+              },
+              {
+                "name": "theme_horror",
+                "label": "Theme: horror or psychological terror",
+                "value": "yes"
+              },
+              {
+                "name": "audiobook",
+                "label": "audiobook",
+                "value": "yes"
+              },
+              {
+                "name": "theme_psychology",
+                "label": "Theme: psychology or mental health",
+                "value": "yes"
+              },
+              {
+                "name": "text_reviews_count",
+                "label": "Number of text reviews for the book",
+                "value": "198"
+              }
+            ],
+            "experience": [
+              {
+                "name": "theme_death",
+                "label": "Theme: death, dying, or mortality",
+                "value": "no"
+              },
+              {
+                "name": "theme_friendship",
+                "label": "Theme: friendship or found family",
+                "value": "no"
+              },
+              {
+                "name": "illness_or_terminal_diagnosis",
+                "label": "Whether a serious illness or terminal diagnosis is a significant plot element",
+                "value": "no"
+              },
+              {
+                "name": "theme_adventure",
+                "label": "Theme: adventure, exploration, or quest",
+                "value": "no"
+              },
+              {
+                "name": "theme_power_politics",
+                "label": "Theme: power, politics, or political intrigue",
+                "value": "yes"
+              },
+              {
+                "name": "trope_forbidden_love",
+                "label": "Trope: forbidden love or star-crossed romance",
+                "value": "no"
+              },
+              {
+                "name": "is_debut",
+                "label": "Whether this is the author's debut published book",
+                "value": "no"
+              },
+              {
+                "name": "romance_subgenre_erotic",
+                "label": "Romance subgenre: erotic romance",
+                "value": "no"
+              },
+              {
+                "name": "romance_subgenre_romantic_suspense",
+                "label": "Romance subgenre: romantic suspense",
+                "value": "no"
+              },
+              {
+                "name": "trope_coming_of_age",
+                "label": "Trope: coming of age",
+                "value": "no"
+              },
+              {
+                "name": "theme_love_or_romance",
+                "label": "Theme: love or romantic relationships",
+                "value": "no"
+              },
+              {
+                "name": "romance_subgenre_historical",
+                "label": "Romance subgenre: historical romance",
+                "value": "no"
+              }
+            ],
+            "credence": [
+              {
+                "name": "publisher",
+                "label": "Publisher of the book",
+                "value": "Little, Brown and Company"
+              },
+              {
+                "name": "ratings_count",
+                "label": "Number of ratings for the book",
+                "value": "715"
+              },
+              {
+                "name": "author_name",
+                "label": "Author name",
+                "value": "Denise Mina"
+              },
+              {
+                "name": "mystery_subgenre",
+                "label": "Mystery or thriller type: cozy, hardboiled, police_procedural, psychological_thriller, amateur_sleuth, supernatural_mystery, domestic_thriller, legal_thriller",
+                "value": "hardboiled"
+              },
+              {
+                "name": "nonfiction_subtype",
+                "label": "For nonfiction books: memoir_or_autobiography, biography, travel_writing, academic_or_scholarly, reference_or_how_to, inspirational_or_devotional, self_help, parenting_or_family_guidance, cultural_criticism, narrative_nonfiction, investigative_journalism, true_crime, history, business",
+                "value": "true_crime"
+              },
+              {
+                "name": "theme_cultural_clash",
+                "label": "Theme: cultural difference, clash, or cross-cultural encounter",
+                "value": "yes"
+              },
+              {
+                "name": "series_works_count",
+                "label": "Number of books in the series",
+                "value": "0"
+              },
+              {
+                "name": "is_in_series",
+                "label": "Whether the book is part of a series",
+                "value": null
+              },
+              {
+                "name": "book_club_pick",
+                "label": "Whether the book is tagged as a book club selection",
+                "value": "no"
+              },
+              {
+                "name": "magic_system",
+                "label": "Whether the book features an explicit, rule-based magic system",
+                "value": "no"
+              },
+              {
+                "name": "technology_level",
+                "label": "Technological era of the story's setting: pre_industrial, contemporary, near_future, or far_future",
+                "value": "contemporary"
+              }
+            ]
+          }
+        },
+        {
+          "spec_index": 1,
+          "initial_query": "children fantasy paranormal",
+          "target": {
+            "id": "36183691",
+            "name": "The Girl Who Takes an Eye for an Eye (Millennium, #5)"
+          },
+          "initial_state": [
+            {
+              "name": "genres",
+              "label": "Genres of the book",
+              "value": "mystery, thriller, crime, fiction"
+            }
+          ],
+          "sec_split": {
+            "search": [
+              {
+                "name": "series_works_count",
+                "label": "Number of books in the series",
+                "value": "12"
+              },
+              {
+                "name": "theme_crime",
+                "label": "Theme: crime, murder, or criminal activity",
+                "value": "yes"
+              },
+              {
+                "name": "audiobook",
+                "label": "audiobook",
+                "value": "yes"
+              },
+              {
+                "name": "emotional_tone",
+                "label": "Primary emotional register: dark_or_grim, tense, melancholic, hopeful, humorous, whimsical, cozy_or_warm, bittersweet, angsty",
+                "value": "tense"
+              }
+            ],
+            "experience": [
+              {
+                "name": "setting_type",
+                "label": "Primary physical or social environment: urban, small_town_or_rural, isolated_or_wilderness, institutional, workplace, aristocratic_or_court",
+                "value": "institutional"
+              },
+              {
+                "name": "based_on_true_story",
+                "label": "Whether the book is inspired by or closely depicts real events or people",
+                "value": "no"
+              },
+              {
+                "name": "theme_adventure",
+                "label": "Theme: adventure, exploration, or quest",
+                "value": "no"
+              },
+              {
+                "name": "is_collection",
+                "label": "Whether the book is a collection or anthology of multiple works (short stories, poems, essays, comics, etc.) rather than a single continuous work",
+                "value": "no"
+              },
+              {
+                "name": "theme_drama",
+                "label": "Theme: interpersonal drama or emotional conflict",
+                "value": "no"
+              },
+              {
+                "name": "theme_war",
+                "label": "Theme: war, military conflict, or its aftermath",
+                "value": "no"
+              },
+              {
+                "name": "theme_technology",
+                "label": "Theme: technology or scientific progress",
+                "value": "no"
+              },
+              {
+                "name": "series_position",
+                "label": "Position of the book in the series",
+                "value": null
+              },
+              {
+                "name": "theme_mythology",
+                "label": "Theme: mythology, legend, or folklore",
+                "value": "no"
+              },
+              {
+                "name": "theme_cultural_clash",
+                "label": "Theme: cultural difference, clash, or cross-cultural encounter",
+                "value": "no"
+              },
+              {
+                "name": "is_physical_format",
+                "label": "Whether the book has been tagged as available in a physical print format (paperback or hardcover)",
+                "value": "no"
+              },
+              {
+                "name": "trope_revenge",
+                "label": "Trope: revenge plot",
+                "value": "no"
+              }
+            ],
+            "credence": [
+              {
+                "name": "publisher",
+                "label": "Publisher of the book",
+                "value": "Random House Audio"
+              },
+              {
+                "name": "ratings_count",
+                "label": "Number of ratings for the book",
+                "value": "53"
+              },
+              {
+                "name": "series_name",
+                "label": "Name of the series the book belongs to",
+                "value": "Millennium"
+              },
+              {
+                "name": "author_name",
+                "label": "Author name",
+                "value": "David Lagercrantz"
+              },
+              {
+                "name": "associated_cultures",
+                "label": "Cultures meaningfully associated with the book, covering author origin, story setting, and subject matter — may include both specific (e.g. Korean, French) and regional (e.g. Asian, European) labels",
+                "value": "Nordic, European"
+              },
+              {
+                "name": "mystery_subgenre",
+                "label": "Mystery or thriller type: cozy, hardboiled, police_procedural, psychological_thriller, amateur_sleuth, supernatural_mystery, domestic_thriller, legal_thriller",
+                "value": "hardboiled"
+              },
+              {
+                "name": "text_reviews_count",
+                "label": "Number of text reviews for the book",
+                "value": "13"
+              },
+              {
+                "name": "theme_power_politics",
+                "label": "Theme: power, politics, or political intrigue",
+                "value": "no"
+              },
+              {
+                "name": "theme_family",
+                "label": "Theme: family relationships and dynamics",
+                "value": "yes"
+              },
+              {
+                "name": "book_club_pick",
+                "label": "Whether the book is tagged as a book club selection",
+                "value": "no"
+              },
+              {
+                "name": "magic_system",
+                "label": "Whether the book features an explicit, rule-based magic system",
+                "value": "no"
+              },
+              {
+                "name": "technology_level",
+                "label": "Technological era of the story's setting: pre_industrial, contemporary, near_future, or far_future",
+                "value": "contemporary"
+              }
+            ]
+          }
+        },
+        {
+          "spec_index": 2,
+          "initial_query": "fantasy paranormal romance",
+          "target": {
+            "id": "31213316",
+            "name": "I Am a Unicorn!"
+          },
+          "initial_state": [
+            {
+              "name": "genres",
+              "label": "Genres of the book",
+              "value": "children, fantasy, paranormal, fiction"
+            }
+          ],
+          "sec_split": {
+            "search": [
+              {
+                "name": "setting_type",
+                "label": "Primary physical or social environment: urban, small_town_or_rural, isolated_or_wilderness, institutional, workplace, aristocratic_or_court",
+                "value": "institutional"
+              },
+              {
+                "name": "is_collection",
+                "label": "Whether the book is a collection or anthology of multiple works (short stories, poems, essays, comics, etc.) rather than a single continuous work",
+                "value": "yes"
+              },
+              {
+                "name": "art_or_music_focus",
+                "label": "Whether creating or inhabiting art, music, or another creative discipline is central to the plot or a main character",
+                "value": "yes"
+              },
+              {
+                "name": "target_age_group",
+                "label": "Primary intended readership age group: middle_grade, young_adult, new_adult, adult, or academic",
+                "value": "middle_grade"
+              },
+              {
+                "name": "num_pages",
+                "label": "Number of pages in the book",
+                "value": "32"
+              },
+              {
+                "name": "lgbtq_themes",
+                "label": "Level of LGBTQ+ content: central_to_plot, significant_theme, minor_or_background, or absent",
+                "value": "minor_or_background"
+              },
+              {
+                "name": "theme_nature",
+                "label": "Theme: nature, the environment, or animals",
+                "value": "yes"
+              }
+            ],
+            "experience": [
+              {
+                "name": "text_reviews_count",
+                "label": "Number of text reviews for the book",
+                "value": "26"
+              },
+              {
+                "name": "classic",
+                "label": "Whether the book is widely regarded as a literary classic",
+                "value": "no"
+              },
+              {
+                "name": "based_on_true_story",
+                "label": "Whether the book is inspired by or closely depicts real events or people",
+                "value": "no"
+              },
+              {
+                "name": "theme_technology",
+                "label": "Theme: technology or scientific progress",
+                "value": "no"
+              },
+              {
+                "name": "theme_cultural_clash",
+                "label": "Theme: cultural difference, clash, or cross-cultural encounter",
+                "value": "no"
+              },
+              {
+                "name": "theme_identity",
+                "label": "Theme: identity, self-discovery, or coming out",
+                "value": "no"
+              },
+              {
+                "name": "trope_coming_of_age",
+                "label": "Trope: coming of age",
+                "value": "no"
+              },
+              {
+                "name": "theme_abuse",
+                "label": "Theme: abuse, trauma, or domestic violence",
+                "value": "no"
+              },
+              {
+                "name": "theme_drama",
+                "label": "Theme: interpersonal drama or emotional conflict",
+                "value": "no"
+              },
+              {
+                "name": "theme_survival",
+                "label": "Theme: survival against extreme odds",
+                "value": "no"
+              },
+              {
+                "name": "theme_psychology",
+                "label": "Theme: psychology or mental health",
+                "value": "no"
+              },
+              {
+                "name": "romance_subgenre_historical",
+                "label": "Romance subgenre: historical romance",
+                "value": "no"
+              }
+            ],
+            "credence": [
+              {
+                "name": "publisher",
+                "label": "Publisher of the book",
+                "value": "Sky Pony Press"
+              },
+              {
+                "name": "author_name",
+                "label": "Author name",
+                "value": "Michaela Schuett"
+              },
+              {
+                "name": "world_type",
+                "label": "Broad type of world the story takes place in: real_world, fantasy_world, or sci_fi_world",
+                "value": "fantasy_world"
+              },
+              {
+                "name": "ratings_count",
+                "label": "Number of ratings for the book",
+                "value": "83"
+              },
+              {
+                "name": "book_club_pick",
+                "label": "Whether the book is tagged as a book club selection",
+                "value": "no"
+              },
+              {
+                "name": "fantasy_subgenre",
+                "label": "Fantasy type: epic_or_high, urban, dark_or_grimdark, romantic_fantasy, fairy_tale_retelling, mythological, portal, cozy_fantasy, other",
+                "value": "other"
+              },
+              {
+                "name": "magic_system",
+                "label": "Whether the book features an explicit, rule-based magic system",
+                "value": "no"
+              },
+              {
+                "name": "award_status",
+                "label": "Award recognition: winner, nominated, or absent",
+                "value": "winner"
+              }
+            ]
+          }
+        }
+      ],
+      "sec_distribution": [
+        {
+          "name": "series_works_count",
+          "label": "Number of books in the series",
+          "n": 100,
+          "search": 0.32,
+          "experience": 0.41,
+          "credence": 0.27
+        },
+        {
+          "name": "is_in_series",
+          "label": "Whether the book is part of a series",
+          "n": 100,
+          "search": 0.3,
+          "experience": 0.5,
+          "credence": 0.2
+        },
+        {
+          "name": "target_age_group",
+          "label": "Primary intended readership age group: middle_grade, young_adult, new_adult, adult, or academic",
+          "n": 100,
+          "search": 0.33,
+          "experience": 0.51,
+          "credence": 0.16
+        },
+        {
+          "name": "audiobook",
+          "label": "audiobook",
+          "n": 100,
+          "search": 0.36,
+          "experience": 0.51,
+          "credence": 0.13
+        },
+        {
+          "name": "num_pages",
+          "label": "Number of pages in the book",
+          "n": 78,
+          "search": 0.397,
+          "experience": 0.333,
+          "credence": 0.269
+        },
+        {
+          "name": "theme_love_or_romance",
+          "label": "Theme: love or romantic relationships",
+          "n": 100,
+          "search": 0.27,
+          "experience": 0.56,
+          "credence": 0.17
+        },
+        {
+          "name": "emotional_tone",
+          "label": "Primary emotional register: dark_or_grim, tense, melancholic, hopeful, humorous, whimsical, cozy_or_warm, bittersweet, angsty",
+          "n": 80,
+          "search": 0.487,
+          "experience": 0.3,
+          "credence": 0.212
+        },
+        {
+          "name": "text_reviews_count",
+          "label": "Number of text reviews for the book",
+          "n": 100,
+          "search": 0.1,
+          "experience": 0.3,
+          "credence": 0.6
+        },
+        {
+          "name": "theme_crime",
+          "label": "Theme: crime, murder, or criminal activity",
+          "n": 100,
+          "search": 0.27,
+          "experience": 0.62,
+          "credence": 0.11
+        },
+        {
+          "name": "theme_drama",
+          "label": "Theme: interpersonal drama or emotional conflict",
+          "n": 100,
+          "search": 0.16,
+          "experience": 0.68,
+          "credence": 0.16
+        },
+        {
+          "name": "romance_subgenre_erotic",
+          "label": "Romance subgenre: erotic romance",
+          "n": 100,
+          "search": 0.15,
+          "experience": 0.68,
+          "credence": 0.17
+        },
+        {
+          "name": "average_rating",
+          "label": "Average rating of the book",
+          "n": 100,
+          "search": 0.11,
+          "experience": 0.71,
+          "credence": 0.18
+        },
+        {
+          "name": "violence_level",
+          "label": "Level of violence depicted: mild, moderate, or graphic",
+          "n": 70,
+          "search": 0.286,
+          "experience": 0.586,
+          "credence": 0.129
+        },
+        {
+          "name": "setting_type",
+          "label": "Primary physical or social environment: urban, small_town_or_rural, isolated_or_wilderness, institutional, workplace, aristocratic_or_court",
+          "n": 56,
+          "search": 0.482,
+          "experience": 0.179,
+          "credence": 0.339
+        },
+        {
+          "name": "nsfw",
+          "label": "Whether the book contains explicit sexual content",
+          "n": 100,
+          "search": 0.06,
+          "experience": 0.72,
+          "credence": 0.22
+        },
+        {
+          "name": "chick_lit",
+          "label": "Whether the book is tagged as chick-lit or women's fiction",
+          "n": 100,
+          "search": 0.17,
+          "experience": 0.73,
+          "credence": 0.1
+        },
+        {
+          "name": "romance_subgenre_contemporary",
+          "label": "Romance subgenre: contemporary romance",
+          "n": 100,
+          "search": 0.18,
+          "experience": 0.76,
+          "credence": 0.06
+        },
+        {
+          "name": "theme_horror",
+          "label": "Theme: horror or psychological terror",
+          "n": 100,
+          "search": 0.17,
+          "experience": 0.77,
+          "credence": 0.06
+        },
+        {
+          "name": "theme_friendship",
+          "label": "Theme: friendship or found family",
+          "n": 100,
+          "search": 0.16,
+          "experience": 0.78,
+          "credence": 0.06
+        },
+        {
+          "name": "theme_adventure",
+          "label": "Theme: adventure, exploration, or quest",
+          "n": 100,
+          "search": 0.11,
+          "experience": 0.78,
+          "credence": 0.11
+        },
+        {
+          "name": "is_physical_format",
+          "label": "Whether the book has been tagged as available in a physical print format (paperback or hardcover)",
+          "n": 100,
+          "search": 0.14,
+          "experience": 0.79,
+          "credence": 0.07
+        },
+        {
+          "name": "ratings_count",
+          "label": "Number of ratings for the book",
+          "n": 100,
+          "search": 0.12,
+          "experience": 0.09,
+          "credence": 0.79
+        },
+        {
+          "name": "theme_magic",
+          "label": "Theme: magic or the supernatural",
+          "n": 100,
+          "search": 0.08,
+          "experience": 0.82,
+          "credence": 0.1
+        },
+        {
+          "name": "theme_family",
+          "label": "Theme: family relationships and dynamics",
+          "n": 100,
+          "search": 0.08,
+          "experience": 0.82,
+          "credence": 0.1
+        },
+        {
+          "name": "is_collection",
+          "label": "Whether the book is a collection or anthology of multiple works (short stories, poems, essays, comics, etc.) rather than a single continuous work",
+          "n": 100,
+          "search": 0.1,
+          "experience": 0.82,
+          "credence": 0.08
+        },
+        {
+          "name": "associated_cultures",
+          "label": "Cultures meaningfully associated with the book, covering author origin, story setting, and subject matter — may include both specific (e.g. Korean, French) and regional (e.g. Asian, European) labels",
+          "n": 45,
+          "search": 0.311,
+          "experience": 0.089,
+          "credence": 0.6
+        },
+        {
+          "name": "theme_death",
+          "label": "Theme: death, dying, or mortality",
+          "n": 100,
+          "search": 0.11,
+          "experience": 0.83,
+          "credence": 0.06
+        },
+        {
+          "name": "theme_psychology",
+          "label": "Theme: psychology or mental health",
+          "n": 100,
+          "search": 0.11,
+          "experience": 0.83,
+          "credence": 0.06
+        },
+        {
+          "name": "world_type",
+          "label": "Broad type of world the story takes place in: real_world, fantasy_world, or sci_fi_world",
+          "n": 98,
+          "search": 0.092,
+          "experience": 0.847,
+          "credence": 0.061
+        },
+        {
+          "name": "art_or_music_focus",
+          "label": "Whether creating or inhabiting art, music, or another creative discipline is central to the plot or a main character",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.86,
+          "credence": 0.11
+        },
+        {
+          "name": "trope_alpha_hero",
+          "label": "Trope: alpha or brooding hero",
+          "n": 100,
+          "search": 0.06,
+          "experience": 0.87,
+          "credence": 0.07
+        },
+        {
+          "name": "romance_subgenre_new_adult",
+          "label": "Romance subgenre: new adult romance",
+          "n": 100,
+          "search": 0.07,
+          "experience": 0.87,
+          "credence": 0.06
+        },
+        {
+          "name": "theme_feminism",
+          "label": "Theme: feminism or women's rights",
+          "n": 100,
+          "search": 0.07,
+          "experience": 0.87,
+          "credence": 0.06
+        },
+        {
+          "name": "theme_technology",
+          "label": "Theme: technology or scientific progress",
+          "n": 100,
+          "search": 0.07,
+          "experience": 0.87,
+          "credence": 0.06
+        },
+        {
+          "name": "series_position",
+          "label": "Position of the book in the series",
+          "n": 37,
+          "search": 0.649,
+          "experience": 0.162,
+          "credence": 0.189
+        },
+        {
+          "name": "trope_coming_of_age",
+          "label": "Trope: coming of age",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.88,
+          "credence": 0.09
+        },
+        {
+          "name": "based_on_true_story",
+          "label": "Whether the book is inspired by or closely depicts real events or people",
+          "n": 100,
+          "search": 0.04,
+          "experience": 0.88,
+          "credence": 0.08
+        },
+        {
+          "name": "romance_subgenre_paranormal",
+          "label": "Romance subgenre: paranormal romance",
+          "n": 100,
+          "search": 0.06,
+          "experience": 0.89,
+          "credence": 0.05
+        },
+        {
+          "name": "theme_war",
+          "label": "Theme: war, military conflict, or its aftermath",
+          "n": 100,
+          "search": 0.06,
+          "experience": 0.9,
+          "credence": 0.04
+        },
+        {
+          "name": "illness_or_terminal_diagnosis",
+          "label": "Whether a serious illness or terminal diagnosis is a significant plot element",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.9,
+          "credence": 0.09
+        },
+        {
+          "name": "theme_power_politics",
+          "label": "Theme: power, politics, or political intrigue",
+          "n": 100,
+          "search": 0.05,
+          "experience": 0.91,
+          "credence": 0.04
+        },
+        {
+          "name": "theme_survival",
+          "label": "Theme: survival against extreme odds",
+          "n": 100,
+          "search": 0.05,
+          "experience": 0.92,
+          "credence": 0.03
+        },
+        {
+          "name": "trope_enemies_to_lovers",
+          "label": "Trope: enemies-to-lovers",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.92,
+          "credence": 0.05
+        },
+        {
+          "name": "romance_subgenre_romantic_suspense",
+          "label": "Romance subgenre: romantic suspense",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.94,
+          "credence": 0.04
+        },
+        {
+          "name": "romance_subgenre_historical",
+          "label": "Romance subgenre: historical romance",
+          "n": 100,
+          "search": 0.04,
+          "experience": 0.94,
+          "credence": 0.02
+        },
+        {
+          "name": "theme_mythology",
+          "label": "Theme: mythology, legend, or folklore",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.94,
+          "credence": 0.03
+        },
+        {
+          "name": "theme_faith_religion",
+          "label": "Theme: faith, religion, or spirituality",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.94,
+          "credence": 0.06
+        },
+        {
+          "name": "trope_friends_to_lovers",
+          "label": "Trope: friends-to-lovers",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.94,
+          "credence": 0.04
+        },
+        {
+          "name": "sci_fi_subgenre",
+          "label": "Science fiction type: space_opera, dystopian, cyberpunk, military, biopunk, cli_fi, hard_sci_fi, other",
+          "n": 17,
+          "search": 0.647,
+          "experience": 0.118,
+          "credence": 0.235
+        },
+        {
+          "name": "cliffhanger_ending",
+          "label": "Whether the book ends on an unresolved cliffhanger that requires reading the next installment",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.95,
+          "credence": 0.02
+        },
+        {
+          "name": "theme_abuse",
+          "label": "Theme: abuse, trauma, or domestic violence",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.95,
+          "credence": 0.04
+        },
+        {
+          "name": "trope_second_chance",
+          "label": "Trope: second chance romance",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.95,
+          "credence": 0.04
+        },
+        {
+          "name": "theme_identity",
+          "label": "Theme: identity, self-discovery, or coming out",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.95,
+          "credence": 0.04
+        },
+        {
+          "name": "theme_nature",
+          "label": "Theme: nature, the environment, or animals",
+          "n": 100,
+          "search": 0.03,
+          "experience": 0.95,
+          "credence": 0.02
+        },
+        {
+          "name": "lgbtq_themes",
+          "label": "Level of LGBTQ+ content: central_to_plot, significant_theme, minor_or_background, or absent",
+          "n": 14,
+          "search": 0.643,
+          "experience": 0.0,
+          "credence": 0.357
+        },
+        {
+          "name": "trope_opposites_attract",
+          "label": "Trope: opposites attract",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.96,
+          "credence": 0.03
+        },
+        {
+          "name": "romance_subgenre_sci_fi_or_fantasy",
+          "label": "Romance subgenre: sci-fi or fantasy romance",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.96,
+          "credence": 0.02
+        },
+        {
+          "name": "theme_cultural_clash",
+          "label": "Theme: cultural difference, clash, or cross-cultural encounter",
+          "n": 100,
+          "search": 0.02,
+          "experience": 0.96,
+          "credence": 0.02
+        },
+        {
+          "name": "is_ebook",
+          "label": "Whether the book is available as an ebook",
+          "n": 88,
+          "search": 0.0,
+          "experience": 0.955,
+          "credence": 0.045
+        },
+        {
+          "name": "trope_love_triangle",
+          "label": "Trope: love triangle",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.97,
+          "credence": 0.02
+        },
+        {
+          "name": "trope_slow_burn",
+          "label": "Trope: slow burn romance",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.97,
+          "credence": 0.02
+        },
+        {
+          "name": "summer_read",
+          "label": "Whether the book is tagged as a beach or summer read",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.97,
+          "credence": 0.03
+        },
+        {
+          "name": "theme_redemption",
+          "label": "Theme: redemption, sacrifice, or atonement",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.97,
+          "credence": 0.03
+        },
+        {
+          "name": "classic",
+          "label": "Whether the book is widely regarded as a literary classic",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.97,
+          "credence": 0.03
+        },
+        {
+          "name": "trope_fake_dating",
+          "label": "Trope: fake dating or fake relationship",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.98,
+          "credence": 0.02
+        },
+        {
+          "name": "trope_secret_identity",
+          "label": "Trope: secret identity or double life",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.98,
+          "credence": 0.02
+        },
+        {
+          "name": "trope_forced_marriage",
+          "label": "Trope: forced or arranged marriage",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.98,
+          "credence": 0.01
+        },
+        {
+          "name": "trope_redemption_arc",
+          "label": "Trope: redemption arc",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.98,
+          "credence": 0.02
+        },
+        {
+          "name": "romance_subgenre_christian_or_clean",
+          "label": "Romance subgenre: christian or clean romance",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.98,
+          "credence": 0.02
+        },
+        {
+          "name": "romance_subgenre_regency",
+          "label": "Romance subgenre: Regency romance",
+          "n": 100,
+          "search": 0.01,
+          "experience": 0.98,
+          "credence": 0.01
+        },
+        {
+          "name": "is_indie_or_self_published",
+          "label": "Whether the book was self-published or released through an indie publisher",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.98,
+          "credence": 0.02
+        },
+        {
+          "name": "theme_time_travel",
+          "label": "Theme: time travel",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.98,
+          "credence": 0.02
+        },
+        {
+          "name": "trope_revenge",
+          "label": "Trope: revenge plot",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.98,
+          "credence": 0.02
+        },
+        {
+          "name": "is_debut",
+          "label": "Whether this is the author's debut published book",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.98,
+          "credence": 0.02
+        },
+        {
+          "name": "publication_year",
+          "label": "Year the book was published",
+          "n": 76,
+          "search": 0.0,
+          "experience": 0.974,
+          "credence": 0.026
+        },
+        {
+          "name": "trope_secret_baby",
+          "label": "Trope: secret baby",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "romance_subgenre_dark_romance",
+          "label": "Romance subgenre: dark romance",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "trope_found_family",
+          "label": "Trope: found family",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "trope_forced_proximity",
+          "label": "Trope: forced proximity",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "trope_rags_to_riches",
+          "label": "Trope: rags to riches",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "trope_chosen_one",
+          "label": "Trope: chosen one or prophesied hero",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "theme_freedom_speech",
+          "label": "Theme: freedom of speech, censorship, or expression",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "trope_identity_swap",
+          "label": "Trope: mistaken or swapped identity",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "fanfiction_origin",
+          "label": "Whether the book originated as or was adapted from fanfiction",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "trope_forbidden_love",
+          "label": "Trope: forbidden love or star-crossed romance",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.99,
+          "credence": 0.01
+        },
+        {
+          "name": "happy_ending",
+          "label": "Whether the book resolves with a happy ending (True), an unhappy one (False), or unknown (null)",
+          "n": 5,
+          "search": 0.8,
+          "experience": 0.0,
+          "credence": 0.2
+        },
+        {
+          "name": "genres",
+          "label": "Genres of the book",
+          "n": 100,
+          "search": 1.0,
+          "experience": 0.0,
+          "credence": 0.0
+        },
+        {
+          "name": "author_name",
+          "label": "Author name",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "magic_system",
+          "label": "Whether the book features an explicit, rule-based magic system",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "book_club_pick",
+          "label": "Whether the book is tagged as a book club selection",
+          "n": 100,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "technology_level",
+          "label": "Technological era of the story's setting: pre_industrial, contemporary, near_future, or far_future",
+          "n": 77,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "publisher",
+          "label": "Publisher of the book",
+          "n": 72,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "series_name",
+          "label": "Name of the series the book belongs to",
+          "n": 51,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "mystery_subgenre",
+          "label": "Mystery or thriller type: cozy, hardboiled, police_procedural, psychological_thriller, amateur_sleuth, supernatural_mystery, domestic_thriller, legal_thriller",
+          "n": 37,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "nonfiction_subtype",
+          "label": "For nonfiction books: memoir_or_autobiography, biography, travel_writing, academic_or_scholarly, reference_or_how_to, inspirational_or_devotional, self_help, parenting_or_family_guidance, cultural_criticism, narrative_nonfiction, investigative_journalism, true_crime, history, business",
+          "n": 32,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "plot_devices",
+          "label": "Key plot mechanics present: heroic_quest, whodunit, survival, political_intrigue, forced_partnership, heist_or_con, competition_or_tournament, undercover_mission, artifact_quest",
+          "n": 29,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "fantasy_subgenre",
+          "label": "Fantasy type: epic_or_high, urban, dark_or_grimdark, romantic_fantasy, fairy_tale_retelling, mythological, portal, cozy_fantasy, other",
+          "n": 29,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "paranormal_creatures",
+          "label": "Paranormal creature types present: vampire, werewolf, angel, demon, zombie, fae, witch_or_mage, ghost, dragon, god_or_deity, mutant",
+          "n": 15,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "award_status",
+          "label": "Award recognition: winner, nominated, or absent",
+          "n": 12,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "narrative_devices",
+          "label": "Structural narrative techniques used: nonlinear, dual_timeline, flashback_heavy, unreliable_narrator, epistolary, frame_narrative, slow_revelation, social_fable",
+          "n": 4,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        },
+        {
+          "name": "cookbook_details",
+          "label": "For cookbooks: cuisine type and skill level (e.g. Italian beginner, Baking all_levels)",
+          "n": 2,
+          "search": 0.0,
+          "experience": 0.0,
+          "credence": 1.0
+        }
+      ]
+    }
+  ]
+}
