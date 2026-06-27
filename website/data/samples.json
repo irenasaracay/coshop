@@ -15,7 +15,7 @@
       "specs": [
         {
           "spec_index": 0,
-          "initial_query": "jacket",
+          "initial_query": "men streetwear t-shirt placement print",
           "target": {
             "id": "903326005",
             "name": "Bert Relaxed Printed Tee"
@@ -25,36 +25,35 @@
               "name": "product_type_name",
               "label": "Product category",
               "value": "T-shirt"
+            },
+            {
+              "name": "pattern_type",
+              "label": "Pattern type (dominant visual pattern or colour arrangement, e.g. solid, stripe, floral, plaid/check, animal print, melange, colour block, camouflage, polka dots)",
+              "value": "placement print"
+            },
+            {
+              "name": "graphical_appearance_name",
+              "label": "Pattern",
+              "value": "Placement print"
+            },
+            {
+              "name": "age",
+              "label": "Age group (target age category: adult, child, infant)",
+              "value": "adult"
+            },
+            {
+              "name": "gender",
+              "label": "Gender (target gender of the garment: female, male, unisex)",
+              "value": "male"
+            },
+            {
+              "name": "target_lifestyle_style",
+              "label": "Style intent (intended lifestyle or use context, e.g. athletic, outdoor, streetwear, loungewear/nightwear, everyday basic, occasion/formal)",
+              "value": "streetwear"
             }
           ],
           "sec_split": {
-            "search": [
-              {
-                "name": "age",
-                "label": "Age group (target age category: adult, child, infant)",
-                "value": "adult"
-              },
-              {
-                "name": "gender",
-                "label": "Gender (target gender of the garment: female, male, unisex)",
-                "value": "male"
-              },
-              {
-                "name": "graphical_appearance_name",
-                "label": "Pattern",
-                "value": "Placement print"
-              },
-              {
-                "name": "pattern_type",
-                "label": "Pattern type (dominant visual pattern or colour arrangement, e.g. solid, stripe, floral, plaid/check, animal print, melange, colour block, camouflage, polka dots)",
-                "value": "placement print"
-              },
-              {
-                "name": "target_lifestyle_style",
-                "label": "Style intent (intended lifestyle or use context, e.g. athletic, outdoor, streetwear, loungewear/nightwear, everyday basic, occasion/formal)",
-                "value": "streetwear"
-              }
-            ],
+            "search": [],
             "experience": [
               {
                 "name": "colour_group_name",
@@ -158,7 +157,7 @@
         },
         {
           "spec_index": 1,
-          "initial_query": "dress",
+          "initial_query": "women brushed sweater ribbed cuff ribbed hem dropped shoulder",
           "target": {
             "id": "946748003",
             "name": "Louie solid"
@@ -168,46 +167,45 @@
               "name": "product_type_name",
               "label": "Product category",
               "value": "Sweater"
+            },
+            {
+              "name": "fabric_surface_effect",
+              "label": "Fabric surface finish (visual or tactile surface quality, e.g. satin sheen, brushed, creped, crinkled, washed)",
+              "value": "brushed"
+            },
+            {
+              "name": "sleeve_cuff_detail",
+              "label": "Cuff construction (detail at the end of the sleeve, e.g. ribbed, elasticated, buttoned, thumbhole, tab-and-button, turn-up, adjustable)",
+              "value": "ribbed"
+            },
+            {
+              "name": "has_ribbing",
+              "label": "Has structural ribbing (ribbing at cuffs, hems, waistbands or as a fabric panel; excludes decorative neckline trim)",
+              "value": "yes"
+            },
+            {
+              "name": "hem_detail",
+              "label": "Hem treatment (construction or shape of the hem, e.g. ribbed, raw-edge, scalloped, ruffled, flared, asymmetric, curved, straight-cut, elasticated, smocked)",
+              "value": "ribbed"
+            },
+            {
+              "name": "gender",
+              "label": "Gender (target gender of the garment: female, male, unisex)",
+              "value": "female"
+            },
+            {
+              "name": "age",
+              "label": "Age group (target age category: adult, child, infant)",
+              "value": "adult"
+            },
+            {
+              "name": "shoulder_style",
+              "label": "Shoulder construction (structural shoulder cut, e.g. dropped, raglan)",
+              "value": "dropped"
             }
           ],
           "sec_split": {
-            "search": [
-              {
-                "name": "gender",
-                "label": "Gender (target gender of the garment: female, male, unisex)",
-                "value": "female"
-              },
-              {
-                "name": "age",
-                "label": "Age group (target age category: adult, child, infant)",
-                "value": "adult"
-              },
-              {
-                "name": "has_ribbing",
-                "label": "Has structural ribbing (ribbing at cuffs, hems, waistbands or as a fabric panel; excludes decorative neckline trim)",
-                "value": "yes"
-              },
-              {
-                "name": "hem_detail",
-                "label": "Hem treatment (construction or shape of the hem, e.g. ribbed, raw-edge, scalloped, ruffled, flared, asymmetric, curved, straight-cut, elasticated, smocked)",
-                "value": "ribbed"
-              },
-              {
-                "name": "sleeve_cuff_detail",
-                "label": "Cuff construction (detail at the end of the sleeve, e.g. ribbed, elasticated, buttoned, thumbhole, tab-and-button, turn-up, adjustable)",
-                "value": "ribbed"
-              },
-              {
-                "name": "shoulder_style",
-                "label": "Shoulder construction (structural shoulder cut, e.g. dropped, raglan)",
-                "value": "dropped"
-              },
-              {
-                "name": "fabric_surface_effect",
-                "label": "Fabric surface finish (visual or tactile surface quality, e.g. satin sheen, brushed, creped, crinkled, washed)",
-                "value": "brushed"
-              }
-            ],
+            "search": [],
             "experience": [
               {
                 "name": "target_lifestyle_style",
@@ -1148,7 +1146,7 @@
         },
         {
           "spec_index": 1,
-          "initial_query": "Thriller Drama Mystery",
+          "initial_query": "Drama Romance",
           "target": {
             "id": "912",
             "name": "Casablanca"
@@ -1351,7 +1349,7 @@
         },
         {
           "spec_index": 2,
-          "initial_query": "Action Thriller",
+          "initial_query": "Drama Comedy Romance",
           "target": {
             "id": "5377",
             "name": "About a Boy"
@@ -2277,7 +2275,7 @@
       "specs": [
         {
           "spec_index": 3,
-          "initial_query": "children history historical fiction",
+          "initial_query": "mystery thriller crime horror family psychology drama dark grim moderate violence audiobook rating>=3 reviews>=100",
           "target": {
             "id": "27415447",
             "name": "The Long Drop"
@@ -2287,61 +2285,60 @@
               "name": "genres",
               "label": "Genres of the book",
               "value": "mystery, thriller, crime, fiction, history, historical fiction, biography"
+            },
+            {
+              "name": "theme_horror",
+              "label": "Theme: horror or psychological terror",
+              "value": "yes"
+            },
+            {
+              "name": "violence_level",
+              "label": "Level of violence depicted: mild, moderate, or graphic",
+              "value": "moderate"
+            },
+            {
+              "name": "theme_family",
+              "label": "Theme: family relationships and dynamics",
+              "value": "yes"
+            },
+            {
+              "name": "theme_psychology",
+              "label": "Theme: psychology or mental health",
+              "value": "yes"
+            },
+            {
+              "name": "average_rating",
+              "label": "Average rating of the book",
+              "value": "3.33"
+            },
+            {
+              "name": "theme_crime",
+              "label": "Theme: crime, murder, or criminal activity",
+              "value": "yes"
+            },
+            {
+              "name": "theme_drama",
+              "label": "Theme: interpersonal drama or emotional conflict",
+              "value": "yes"
+            },
+            {
+              "name": "emotional_tone",
+              "label": "Primary emotional register: dark_or_grim, tense, melancholic, hopeful, humorous, whimsical, cozy_or_warm, bittersweet, angsty",
+              "value": "dark_or_grim"
+            },
+            {
+              "name": "text_reviews_count",
+              "label": "Number of text reviews for the book",
+              "value": "198"
+            },
+            {
+              "name": "audiobook",
+              "label": "audiobook",
+              "value": "yes"
             }
           ],
           "sec_split": {
-            "search": [
-              {
-                "name": "emotional_tone",
-                "label": "Primary emotional register: dark_or_grim, tense, melancholic, hopeful, humorous, whimsical, cozy_or_warm, bittersweet, angsty",
-                "value": "dark_or_grim"
-              },
-              {
-                "name": "theme_family",
-                "label": "Theme: family relationships and dynamics",
-                "value": "yes"
-              },
-              {
-                "name": "average_rating",
-                "label": "Average rating of the book",
-                "value": "3.33"
-              },
-              {
-                "name": "theme_drama",
-                "label": "Theme: interpersonal drama or emotional conflict",
-                "value": "yes"
-              },
-              {
-                "name": "violence_level",
-                "label": "Level of violence depicted: mild, moderate, or graphic",
-                "value": "moderate"
-              },
-              {
-                "name": "theme_crime",
-                "label": "Theme: crime, murder, or criminal activity",
-                "value": "yes"
-              },
-              {
-                "name": "theme_horror",
-                "label": "Theme: horror or psychological terror",
-                "value": "yes"
-              },
-              {
-                "name": "audiobook",
-                "label": "audiobook",
-                "value": "yes"
-              },
-              {
-                "name": "theme_psychology",
-                "label": "Theme: psychology or mental health",
-                "value": "yes"
-              },
-              {
-                "name": "text_reviews_count",
-                "label": "Number of text reviews for the book",
-                "value": "198"
-              }
-            ],
+            "search": [],
             "experience": [
               {
                 "name": "theme_death",
@@ -2465,7 +2462,7 @@
         },
         {
           "spec_index": 1,
-          "initial_query": "children fantasy paranormal",
+          "initial_query": "mystery thriller crime tense",
           "target": {
             "id": "36183691",
             "name": "The Girl Who Takes an Eye for an Eye (Millennium, #5)"
@@ -2475,6 +2472,11 @@
               "name": "genres",
               "label": "Genres of the book",
               "value": "mystery, thriller, crime, fiction"
+            },
+            {
+              "name": "emotional_tone",
+              "label": "Primary emotional register: dark_or_grim, tense, melancholic, hopeful, humorous, whimsical, cozy_or_warm, bittersweet, angsty",
+              "value": "tense"
             }
           ],
           "sec_split": {
@@ -2493,11 +2495,6 @@
                 "name": "audiobook",
                 "label": "audiobook",
                 "value": "yes"
-              },
-              {
-                "name": "emotional_tone",
-                "label": "Primary emotional register: dark_or_grim, tense, melancholic, hopeful, humorous, whimsical, cozy_or_warm, bittersweet, angsty",
-                "value": "tense"
               }
             ],
             "experience": [
@@ -2628,7 +2625,7 @@
         },
         {
           "spec_index": 2,
-          "initial_query": "fantasy paranormal romance",
+          "initial_query": "children fantasy paranormal",
           "target": {
             "id": "31213316",
             "name": "I Am a Unicorn!"

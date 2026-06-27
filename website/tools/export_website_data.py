@@ -124,6 +124,28 @@ def feature_entries(names, descriptions, target_row):
     return entries
 
 
+def initial_known_for_spec(ikf, idx):
+    """Initial known features (S1) and z0 query for a spec.
+
+    Rows in initial_known_features_v2.csv are keyed by ``user_idx`` (the spec
+    index) and are NOT in row order, so we must match on user_idx — mirroring
+    Dataset.get_initial_known_features_for_spec. ``tag:foo`` entries resolve to
+    the bare tag column name.
+    """
+    rows = ikf[ikf["user_idx"] == idx]
+    if rows.empty:
+        return [], ""
+    r = rows.iloc[0]
+    raw = parse_list(r.get("feature_names"))
+    feats = [
+        n[len("tag:"):].strip() if isinstance(n, str) and n.startswith("tag:") else n
+        for n in raw
+    ]
+    query = r.get("query")
+    query = "" if query is None or pd.isna(query) else str(query)
+    return feats, query
+
+
 def target_id_for_spec(base, idx):
     """First id on the first line of {idx}_items.txt is the target item x*."""
     items_path = base / "transactions_v2" / f"{idx}_items.txt"
@@ -195,8 +217,9 @@ def export_domain(domain):
     for key in indices:
         for bucket in ("search", "experience", "credence"):
             needed.update(sec[key].get(bucket, []))
-    for _, r in ikf.head(max(int(k) for k in indices) + 1).iterrows():
-        needed.update(parse_list(r["feature_names"]))
+    for key in indices:
+        s1f, _ = initial_known_for_spec(ikf, int(key))
+        needed.update(s1f)
 
     header = pd.read_csv(base / "catalog_v2.csv", nrows=0).columns
     name_col = TARGET_NAME_COL.get(domain)
@@ -211,9 +234,7 @@ def export_domain(domain):
     for key in indices:
         idx = int(key)
         buckets = sec[key]
-        row = ikf.iloc[idx] if idx < len(ikf) else None
-        s1_features = parse_list(row["feature_names"]) if row is not None else []
-        z0_query = str(row["query"]) if row is not None else ""
+        s1_features, z0_query = initial_known_for_spec(ikf, idx)
 
         target_id = target_id_for_spec(base, idx)
         target_row = (
