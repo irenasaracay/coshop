@@ -3,9 +3,9 @@
 *An interactive benchmark for agentic recommender systems that must help non-expert users
 **construct** their preferences — not just elicit them — before making a recommendation.*
 
-[![Paper](https://img.shields.io/badge/Paper-PDF-red)](https://i-gao.github.io/coshop/paper.pdf)
-[![Website](https://img.shields.io/badge/Website-coshop-blue)](https://i-gao.github.io/coshop/)
-[![Docs](https://img.shields.io/badge/Docs-API-green)](https://i-gao.github.io/coshop/api)
+[![Paper](https://img.shields.io/badge/Paper-PDF-red)](https://irenasaracay.github.io/coshop/paper.pdf)
+[![Website](https://img.shields.io/badge/Website-coshop-blue)](https://irenasaracay.github.io/coshop/)
+[![Docs](https://img.shields.io/badge/Docs-API-green)](https://irenasaracay.github.io/coshop/api)
 
 ![CoShop process](docs/figures/coshop.png)
 
