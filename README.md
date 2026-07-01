@@ -3,7 +3,7 @@
 *An interactive benchmark for agentic recommender systems that must help non-expert users
 **construct** their preferences — not just elicit them — before making a recommendation.*
 
-[![Paper](https://img.shields.io/badge/Paper-PDF-red)](https://irenasaracay.github.io/coshop/paper.pdf)
+[![Paper](https://img.shields.io/badge/Paper-PDF-red)](https://arxiv.org/abs/2606.30863)
 [![Website](https://img.shields.io/badge/Website-coshop-blue)](https://irenasaracay.github.io/coshop/)
 [![Docs](https://img.shields.io/badge/Docs-API-green)](https://irenasaracay.github.io/coshop/api)
 
@@ -261,6 +261,7 @@ If you use CoShop in your research, please cite:
       title={Beyond expert users: agents should help users construct preferences, not just elicit them}, 
       author={Irena Saracay and Ludwig Schmidt and Carlos Guestrin},
       year={2026},
+      eprint={2606.30863},
       archivePrefix={arXiv},
       primaryClass={cs.AI},
 }
