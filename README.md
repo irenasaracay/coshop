@@ -33,7 +33,7 @@ and a set of `example_agents` you can run or extend.
 CoShop requires **Python ≥ 3.10**.
 
 ```bash
-git clone https://github.com/i-gao/coshop
+git clone https://github.com/irenasaracay/coshop
 cd coshop
 pip install -e .
 ```

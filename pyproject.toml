@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "coshop"
-version = "0.1.0"
+version = "0.1.1"
 description = "An interactive benchmark for agentic recommender systems that must help non-expert users construct their preferences."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -49,9 +49,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://i-gao.github.io/coshop/"
-Repository = "https://github.com/i-gao/coshop"
-Documentation = "https://i-gao.github.io/coshop/api/"
+Homepage = "https://irenasaracay.github.io/coshop/"
+Repository = "https://github.com/irenasaracay/coshop"
+Documentation = "https://irenasaracay.github.io/coshop/api/"
 
 [project.scripts]
 coshop-vector-search-server = "coshop.tools.vector_search_server:main"

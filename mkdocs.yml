@@ -1,6 +1,6 @@
 site_name: coshop
-site_url: https://i-gao.github.io/coshop/api/
-repo_url: https://github.com/i-gao/coshop
+site_url: https://irenasaracay.github.io/coshop/api/
+repo_url: https://github.com/irenasaracay/coshop
 docs_dir: docs
 site_dir: website/api
 use_directory_urls: true
