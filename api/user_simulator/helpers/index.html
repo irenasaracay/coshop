@@ -1,0 +1,4147 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://irenasaracay.github.io/coshop/api/api/user_simulator/helpers/">
+      
+      
+        <link rel="prev" href="../expert_user/">
+      
+      
+        <link rel="next" href="../../utils/custom_types/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Helpers - coshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#helpers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="coshop" class="md-header__button md-logo" aria-label="coshop" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            coshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Helpers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/irenasaracay/coshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="coshop" class="md-nav__button md-logo" aria-label="coshop" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    coshop
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/irenasaracay/coshop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    data
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datasets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/representation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Representation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/utility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Utility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/subset_catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subset catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/hm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    H&M
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/movielens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MovieLens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data/goodreads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Goodreads
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    evaluation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    evaluation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evaluation/metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evaluation/budget/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Budget
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/catalog_retrieval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog retrieval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/history_search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    History search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/reflect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reflect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/retrieval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retrieval backends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/vector_search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vector search server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    user_simulator
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    user_simulator
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expert_user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expert user
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Helpers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Helpers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        feature_tracker
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FeatureTracker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FeatureTracker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.clear_reveal_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear_reveal_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.get_known_context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_known_context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.get_unknown_feature_types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_unknown_feature_types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.get_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.is_open_to_anything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_open_to_anything
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.process_credence_reveals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        process_credence_reveals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.process_feedback_reveals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        process_feedback_reveals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.process_question_reveals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        process_question_reveals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.reveal_features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reveal_features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.randomly_init_known_features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        randomly_init_known_features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        message_parser
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MessageParser
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MessageParser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParser.items_by_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        items_by_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParser.parsed_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        parsed_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParser.clear_parsed_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear_parsed_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParser.feature_match_item_descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        feature_match_item_descriptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParser.parse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        parse
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MessageParserHMTests
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MessageParserHMTests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_clarifying_history_bias_and_no_truncation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_clarifying_history_bias_and_no_truncation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_explanation_dress_length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_hm_explanation_dress_length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_explanation_none_for_question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_hm_explanation_none_for_question
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_explanation_patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_hm_explanation_patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_item_parsing_with_raw_description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_hm_item_parsing_with_raw_description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_material_question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_hm_material_question
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_multi_clarifying_questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_hm_multi_clarifying_questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_no_items_no_clarifying_questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_hm_no_items_no_clarifying_questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_parse_items_json_mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_parse_items_json_mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.item_comparer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        item_comparer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.item_comparer.ItemComparer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ItemComparer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ItemComparer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.item_comparer.ItemComparer.feedback_prompt_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        feedback_prompt_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.item_comparer.ItemComparer.clear_feedback_prompt_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear_feedback_prompt_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.item_comparer.ItemComparer.compute_feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compute_feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.question_answerer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        question_answerer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.question_answerer.QuestionAnswerer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QuestionAnswerer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QuestionAnswerer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.question_answerer.QuestionAnswerer.question_prompt_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        question_prompt_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.question_answerer.QuestionAnswerer.answer_questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        answer_questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.question_answerer.QuestionAnswerer.clear_question_prompt_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear_question_prompt_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.final_rank_items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        final_rank_items
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.final_rank_items.create_temp_agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create_temp_agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.final_rank_items.rank_items_agentic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rank_items_agentic
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utils
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    utils
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utils/custom_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utils/agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utils/langchain_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LangChain agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utils/model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utils/misc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Misc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        feature_tracker
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FeatureTracker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FeatureTracker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.clear_reveal_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear_reveal_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.get_known_context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_known_context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.get_unknown_feature_types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_unknown_feature_types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.get_value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.is_open_to_anything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_open_to_anything
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.process_credence_reveals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        process_credence_reveals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.process_feedback_reveals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        process_feedback_reveals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.process_question_reveals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        process_question_reveals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.FeatureTracker.reveal_features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reveal_features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.feature_tracker.randomly_init_known_features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        randomly_init_known_features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        message_parser
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MessageParser
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MessageParser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParser.items_by_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        items_by_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParser.parsed_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        parsed_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParser.clear_parsed_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear_parsed_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParser.feature_match_item_descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        feature_match_item_descriptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParser.parse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        parse
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MessageParserHMTests
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MessageParserHMTests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_clarifying_history_bias_and_no_truncation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_clarifying_history_bias_and_no_truncation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_explanation_dress_length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_hm_explanation_dress_length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_explanation_none_for_question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_hm_explanation_none_for_question
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_explanation_patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_hm_explanation_patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_item_parsing_with_raw_description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_hm_item_parsing_with_raw_description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_material_question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_hm_material_question
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_multi_clarifying_questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_hm_multi_clarifying_questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_no_items_no_clarifying_questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_hm_no_items_no_clarifying_questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_parse_items_json_mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_parse_items_json_mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.item_comparer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        item_comparer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.item_comparer.ItemComparer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ItemComparer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ItemComparer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.item_comparer.ItemComparer.feedback_prompt_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        feedback_prompt_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.item_comparer.ItemComparer.clear_feedback_prompt_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear_feedback_prompt_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.item_comparer.ItemComparer.compute_feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compute_feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.question_answerer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        question_answerer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.question_answerer.QuestionAnswerer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QuestionAnswerer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QuestionAnswerer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.question_answerer.QuestionAnswerer.question_prompt_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        question_prompt_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.question_answerer.QuestionAnswerer.answer_questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        answer_questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.question_answerer.QuestionAnswerer.clear_question_prompt_history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear_question_prompt_history
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.final_rank_items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        final_rank_items
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.final_rank_items.create_temp_agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create_temp_agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coshop.user_simulator.helpers.final_rank_items.rank_items_agentic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rank_items_agentic
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="helpers">Helpers</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="coshop.user_simulator.helpers.feature_tracker"></a>
+    <div class="doc doc-contents first">
+
+        <p>Feature revelation tracker for the user simulator.</p>
+<p>Manages the SEC (Search / Experience / Credence) feature state for a single
+elicitation episode: which features are currently known to the agent, which
+are queued for revelation, and how many may be revealed per turn.</p>
+<p>Main exports:</p>
+<ul>
+<li>:class:<code>Feature</code> — dataclass describing one preference feature.</li>
+<li>:class:<code>FeatureTracker</code> — stateful tracker; updated as the conversation progresses.</li>
+<li>:func:<code>randomly_init_known_features</code> — helper to draw an initial random known set.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="coshop.user_simulator.helpers.feature_tracker.FeatureTracker" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">FeatureTracker</span><span class="p">(</span><span class="n">target_df</span><span class="p">,</span> <span class="n">search_features</span><span class="p">,</span> <span class="n">experience_features</span><span class="p">,</span> <span class="n">credence_features</span><span class="p">,</span> <span class="n">max_features_to_reveal</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column_descriptions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">item_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">explanations_can_reveal_non_queued_features</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Initialize the FeatureTracker with the target dataframe and the list of features.
+If a column is not in the list of search, experience, or credence features, it is considered a hidden feature.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>target_df</code>
+            </td>
+            <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>this should be from ds.simulator_catalog -&gt; subset to xstar ids -&gt; explode tags</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>search_features</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>columns in target_df; this includes columns in the original catalog + tags</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>experience_features</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>columns in target_df; this includes columns in the original catalog + tags</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>credence_features</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>columns in target_df; this includes columns in the original catalog + tags</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>max_features_to_reveal</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>maximum number of features to reveal per item / question</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>verbosity</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>if &gt; 0, print feature lists and settings at initialization</p>
+              </div>
+            </td>
+            <td>
+                  <code>0</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.feature_tracker.FeatureTracker.clear_reveal_history" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">clear_reveal_history</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Clear the feature reveal history (e.g. on simulator reset).</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.feature_tracker.FeatureTracker.get_known_context" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_known_context</span><span class="p">(</span><span class="n">relevant_columns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">drop_na_vals</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Returns the context for answering questions and giving feedback.
+Filters to known features.
+If relevant_columns is provided, filters to only include known features in the relevant columns.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.feature_tracker.FeatureTracker.get_unknown_feature_types" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_unknown_feature_types</span><span class="p">(</span><span class="n">relevant_columns</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>For the given column names, return the unknown features grouped by category.
+Only includes features that are tracked (search/experience/credence) and not yet known.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.feature_tracker.FeatureTracker.get_value" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_value</span><span class="p">(</span><span class="n">column_name</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get the value of a feature.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.feature_tracker.FeatureTracker.is_open_to_anything" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">is_open_to_anything</span><span class="p">(</span><span class="n">column_name</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>True if this known feature's target value is the dataset's NA placeholder 'open to anything'.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.feature_tracker.FeatureTracker.process_credence_reveals" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">process_credence_reveals</span><span class="p">(</span><span class="n">explanation</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Reveal any queued credence features based on the assistant message.
+Returns the number of features revealed and the list of credence features the explanation pertains to.
+Returns:
+- number of features revealed
+- list of credence features that we should now answer questions about
+- list of credence features that we should acknowledge but which we don't reveal</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.feature_tracker.FeatureTracker.process_feedback_reveals" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">process_feedback_reveals</span><span class="p">(</span><span class="n">item</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Reveal any features based on an item evaluation.
+Returns:
+    - the number of features revealed
+    - a list of newly revealed experience feature column names for this item</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.feature_tracker.FeatureTracker.process_question_reveals" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">process_question_reveals</span><span class="p">(</span><span class="n">question</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Reveal any features based on the question.
+Returns the number of features revealed and the list of credence features the question pertains to.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.feature_tracker.FeatureTracker.reveal_features" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">reveal_features</span><span class="p">(</span><span class="n">column_names</span><span class="p">,</span> <span class="n">categories</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Reveal a list of features by setting them to known.
+Returns the number of features revealed.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="coshop.user_simulator.helpers.feature_tracker.randomly_init_known_features" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">randomly_init_known_features</span><span class="p">(</span><span class="n">feature_tracker</span><span class="p">,</span> <span class="n">num_features</span><span class="p">,</span> <span class="n">dropout_rate</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Randomly reveal a subset of the (search) features as known.</p>
+<p>Each unknown search feature is independently kept with probability
+<code>1 - dropout_rate</code>. Only search features are revealed; experience and
+credence features are left unknown. <code>num_features</code> is currently unused.
+Returns the number of features revealed.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="coshop.user_simulator.helpers.message_parser"></a>
+    <div class="doc doc-contents first">
+
+        <p>Natural-language message parser for the user simulator.</p>
+<p>Parses the shopping agent's response into structured actions that the simulator
+can act on: clarifying questions, item evaluations, and explanations.</p>
+<p>Main exports:</p>
+<ul>
+<li>:class:<code>ClarifyingQuestion</code> — a question the agent asked the user.</li>
+<li>:class:<code>ItemToEval</code> — an item the agent showed that the simulator should evaluate.</li>
+<li>:class:<code>Explanation</code> — an explanation/statement from the agent about a feature.</li>
+<li>:class:<code>MessageParser</code> — parses a full agent message into the above types.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="coshop.user_simulator.helpers.message_parser.MessageParser" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">MessageParser</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">model_kwargs</span><span class="p">,</span> <span class="n">verbosity</span><span class="p">,</span> <span class="n">target_df</span><span class="p">,</span> <span class="n">catalog</span><span class="p">,</span> <span class="n">column_descriptions</span><span class="p">,</span> <span class="n">max_features_to_reveal</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_item_jsons</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_oracle_item_representations</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_actual_item_values</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">representation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parser_reasoning_effort</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">max_text_len</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Parses a message from the user or assistant into a structured format.
+Ideally tags should be exploded out in the catalog first.</p>
+
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>target_df</code>
+            </td>
+            <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>this should be from ds.simulator_catalog -&gt; subset to xstar ids -&gt; explode tags</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>catalog</code>
+            </td>
+            <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>the original catalog</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>column_descriptions</code>
+            </td>
+            <td>
+                  <code><span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>a dict mapping column names to human-readable descriptions</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>model_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>the name of the model to use</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>model_kwargs</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>a dict of kwargs to pass to the model</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>verbosity</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>the verbosity level</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>use_item_jsons</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>if True, expect items as per-line JSON objects (with "id" and feature keys) instead of <item>...</item> tags.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>use_oracle_item_representations</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>if True, build ItemToEval from catalog only (no LLM calls for item content).</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>representation</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>used with use_oracle for non-JSON raw_description (row_to_str). Required when use_oracle and not use_item_jsons.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>max_text_len</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="int">int</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>when use_oracle and not use_item_jsons, truncate row_to_str to this length (match query/query.py).</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="coshop.user_simulator.helpers.message_parser.MessageParser.items_by_id" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">items_by_id</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Aggregated view of all parsed items so far, keyed by id.</p>
+<p>For each feature, we keep the most recent non-None match seen for that
+item across all messages. A None match never overwrites a non-None one.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="coshop.user_simulator.helpers.message_parser.MessageParser.parsed_history" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">parsed_history</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>History of parsed messages in order (oldest first).</p>
+
+    </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.message_parser.MessageParser.clear_parsed_history" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">clear_parsed_history</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Clear the parsed message history (e.g. on simulator reset).</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.message_parser.MessageParser.feature_match_item_descriptions" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">feature_match_item_descriptions</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">column_names</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Run LOTUS feature match on explicit item descriptions, restricted to the
+given catalog columns (same row shape as <code>_parse_items</code> / <code>_build_feature_rows</code>).
+Calls :func:<code>user_simulator.feature_utils.parse_feature_match_with_lotus</code> directly.
+Does not append to <code>_parsed_history</code>.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>(<span title="match_by_item">match_by_item</span>, <span title="active_columns">active_columns</span>)</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p><code>active_columns</code> lists columns with a</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>concrete target (not missing, not <code>OPEN_TO_ANYTHING</code>), in <code>column_names</code> order.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.message_parser.MessageParser.parse" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">parse</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">question_columns_to_include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">explanation_columns_to_include</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Parse a message from the user or assistant into a structured format.
+Appends the result to parsed_history (in order).</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>message</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>the assistant message to parse.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>question_columns_to_include</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[<span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If provided, restrict which catalog columns
+LOTUS is allowed to select as relevant for the clarifying-question
+extraction step.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="coshop.user_simulator.helpers.message_parser.MessageParserHMTests" class="doc doc-heading">
+            <code>MessageParserHMTests</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="unittest.TestCase">TestCase</span></code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_clarifying_history_bias_and_no_truncation" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">test_clarifying_history_bias_and_no_truncation</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Clarifying-question mapping should:
+- keep all relevant columns from LOTUS (no truncation by max_features_to_reveal),
+- bias toward columns that have not previously been the sole relevant column.</p>
+<p>We simulate LOTUS behavior via a local stub for sem_map_with_retries.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_explanation_dress_length" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">test_hm_explanation_dress_length</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Agent explains dress/skirt length options → one Explanation with dress_length; target value should be in range.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_explanation_none_for_question" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">test_hm_explanation_none_for_question</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Question only (no teaching) → no explanations.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_explanation_patterns" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">test_hm_explanation_patterns</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Agent lists pattern options → one Explanation for graphical_appearance_name; target_value_mentioned_or_in_range depends on target.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_item_parsing_with_raw_description" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">test_hm_item_parsing_with_raw_description</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Single item with rich description; ensure id, raw_description, and key features are extracted.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_material_question" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">test_hm_material_question</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Single clarifying question mapped to 'material'.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_multi_clarifying_questions" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">test_hm_multi_clarifying_questions</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Multiple clarifying questions with specific expected relevant columns.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_hm_no_items_no_clarifying_questions" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">test_hm_no_items_no_clarifying_questions</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Strategy-only message: no <item> tags and only meta questions -&gt; no items, no clarifying questions.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.message_parser.MessageParserHMTests.test_parse_items_json_mode" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">test_parse_items_json_mode</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>With use_item_jsons=True, items are parsed from per-line JSON objects.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="coshop.user_simulator.helpers.item_comparer"></a>
+    <div class="doc doc-contents first">
+
+        <p>Structured item feedback: build (item, feature) rows, run semantic match via LOTUS,
+then generate per-item feedback (2 sentences) with optional parallel LOTUS call.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="coshop.user_simulator.helpers.item_comparer.ItemComparer" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">ItemComparer</span><span class="p">(</span><span class="n">feature_tracker</span><span class="p">,</span> <span class="n">true_features</span><span class="p">,</span> <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;gpt-5-nano&#39;</span><span class="p">,</span> <span class="n">model_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">catalog</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">representation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hint_missing_features</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_more_info_requests</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">use_actual_item_values</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Builds a structured (item, feature) view, runs semantic match via LOTUS,
+then generates per-item feedback (2 sentences), with an option to batch feedback via LOTUS.</p>
+<p>Note: "perfect" here means that all presented feature columns semantically pass the user's
+requirements for this item. It does NOT mean an exact match to the user's ideal x*,
+which is handled separately in <code>expert_user.py</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="coshop.user_simulator.helpers.item_comparer.ItemComparer.feedback_prompt_history" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">feedback_prompt_history</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>History of (item_id, prompt, response) for each 2-sentence feedback prompt shown to the simulator.</p>
+
+    </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.item_comparer.ItemComparer.clear_feedback_prompt_history" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">clear_feedback_prompt_history</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Clear the feedback prompt history (e.g. on simulator reset).</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.item_comparer.ItemComparer.compute_feedback" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">compute_feedback</span><span class="p">(</span><span class="n">items_to_evaluate</span><span class="p">,</span> <span class="n">feedback_fn</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">new_reveals_by_item_id</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Compute structured feedback for each item.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>items_to_evaluate</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="coshop.user_simulator.helpers.message_parser.ItemToEval">ItemToEval</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>list of ItemToEval from the message parser.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>feedback_fn</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.Callable">Callable</span>[[<span title="str">str</span>], <span title="typing.Tuple">Tuple</span>[<span title="str">str</span>, <span title="int">int</span>, <span title="float">float</span>]]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>optional callable (prompt: str) -&gt; (feedback_text: str, token_cost: int, runtime: float).
+If None, uses LOTUS sem_map to batch-generate feedback.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="typing.Tuple">Tuple</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>], <span title="int">int</span>, <span title="float">float</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>(id_to_feedback, total_token_cost, total_runtime_cost).</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="coshop.user_simulator.helpers.question_answerer"></a>
+    <div class="doc doc-contents first">
+
+        <p>QuestionAnswerer: answers clarifying questions one-by-one via LOTUS sem_map.</p>
+<p>Given current preference context (z), a single question, and a hint about which
+feature(s) matter, generates a short shopper-style answer. Used by ExpertUser
+to build the full response to multiple clarifying questions by stitching per-question
+answers.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="coshop.user_simulator.helpers.question_answerer.QuestionAnswerer" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">QuestionAnswerer</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;gpt-5-nano&#39;</span><span class="p">,</span> <span class="n">model_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">true_features</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">simulator_persona</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">verbosity</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Answers each clarifying question via a separate LOTUS sem_map call, then
+stitches the results into one response.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="coshop.user_simulator.helpers.question_answerer.QuestionAnswerer.question_prompt_history" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">question_prompt_history</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>History of (question, prompt, response) for each clarifying-question answer.</p>
+
+    </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.question_answerer.QuestionAnswerer.answer_questions" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">answer_questions</span><span class="p">(</span><span class="n">questions</span><span class="p">,</span> <span class="n">z_context</span><span class="p">,</span> <span class="n">feature_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Answer each question with a separate LOTUS call, then stitch into one response.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>questions</code>
+            </td>
+            <td>
+                  <code><span title="typing.List">List</span>[<span title="coshop.user_simulator.helpers.message_parser.ClarifyingQuestion">ClarifyingQuestion</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of clarifying questions (each has .question and .relevant_columns).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>z_context</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Current preference context (z) for the shopper.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>feature_values</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional mapping column_name -&gt; value to show in the feature hint.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>(stitched_response, token_cost, runtime_cost). Token/runtime from LOTUS</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>are not available here, so returns 0, 0.0 for cost.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="coshop.user_simulator.helpers.question_answerer.QuestionAnswerer.clear_question_prompt_history" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">clear_question_prompt_history</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Clear the question prompt history (e.g. on simulator reset).</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="coshop.user_simulator.helpers.final_rank_items"></a>
+    <div class="doc doc-contents first">
+
+        <p>Agentic item ranking for user-simulator evaluation.</p>
+<p>Provides :func:<code>rank_items_agentic</code>, which asks a copy of the ReAct agent
+to rank a set of catalog items from best to worst, and
+:func:<code>create_temp_agent</code>, which clones an agent with modified tools and
+step limits for the ranking step without altering the original agent state.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="coshop.user_simulator.helpers.final_rank_items.create_temp_agent" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">create_temp_agent</span><span class="p">(</span><span class="n">original_agent</span><span class="p">,</span> <span class="n">retrieval_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">execution_max_per_retrieval</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">execution_max_queries</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">execution_global_max</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">min_react_steps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_react_steps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Create a temporary agent executor with updated query tool for get_final_predictions.
+This allows using a higher execution_max_per_retrieval value during prediction while keeping the original agent intact.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>retrieval_function</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.Callable">Callable</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The query function to use</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>execution_max_per_retrieval</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="int">int</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The max_items_limit for the new tool</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>execution_max_queries</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Maximum number of queries</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>execution_global_max</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="int">int</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Maximum total items that can be retrieved across all query calls</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A temporary LangChainModel with updated tools, or None if not a LangchainAgent</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="coshop.user_simulator.helpers.final_rank_items.rank_items_agentic" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">rank_items_agentic</span><span class="p">(</span><span class="n">original_agent</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Ask the agent to rank items (by id) from best to worst using a temp agent with no query function.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>original_agent</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="LangChainModel(model_name, model_no_tools=None, summary_model_name=None, tools=None, verbosity=0, max_react_steps=25, min_react_steps=1, prompt_cache=True, multiturn_memory=False, summarize_state_after=None, out_of_steps_msg=None, list_tools_in_prompt=False, thinking_tokens=('<think>', '</think>'), add_thinking_tag=True, empty_message_filler=None, api_key=None, model_provider=None, summary_api_key=None, summary_model_provider=None, summary_vllm_api_url=None, **kwargs) (coshop.utils.model.LangChainModel)" href="../../utils/model/#coshop.utils.model.LangChainModel">LangChainModel</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The agent executor to use (state is copied to temp agent).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>items</code>
+            </td>
+            <td>
+                  <code><span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Dict mapping item id to string representation of that item.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>max_retries</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Maximum number of retries for getting a valid list of item ids.</p>
+              </div>
+            </td>
+            <td>
+                  <code>2</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>(<span title="ordered_ids">ordered_ids</span>, <span title="metadata">metadata</span>)</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>List of item ids from best to worst, and a dict with
+"error", "raw", and/or "attempt" on failure; empty metadata on success.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
