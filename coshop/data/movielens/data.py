@@ -257,8 +257,12 @@ class MovieLensDataset(Dataset):
         * **original_language** — ISO 639-1 code mapped to full language name.
         * **popularity** — raw score replaced with a percentile-based label
           (e.g. ``"very popular"``, ``"obscure"``).
-        * **vote_average / vote_count / budget / revenue / runtime / year** —
+        * **vote_average / vote_count / budget / revenue / runtime** —
           rounded and prefixed with ``>=`` or ``<=`` inequality symbols.
+        * **year** — one of the two 20-year windows of adjacent decades that
+          contain the year (e.g. ``"1980s or 1990s"``), drawn from a private
+          ``random.Random(self.seed)`` in catalog row order, so a given seed
+          gives the same labels on every load.
         * **NA values** — filled with ``"open to anything"``.
         """
         out = df.copy()
@@ -279,7 +283,6 @@ class MovieLensDataset(Dataset):
             "budget",
             "revenue",
             "runtime",
-            "year",
             "adult",
         ]
         for col in agg_features:
@@ -289,6 +292,11 @@ class MovieLensDataset(Dataset):
                 lambda v, c=col: _apply_movielens_feature_aggregation(
                     c, v, include_inequalities=True
                 )
+            )
+        if "year" in out.columns:
+            rng = random.Random(self.seed)
+            out["year"] = out["year"].apply(
+                lambda v: v if pd.isna(v) else _format_year_to_20yr_block_label(v, rng)
             )
         out = out.fillna("open to anything")
         return out
@@ -793,11 +801,6 @@ def _format_movielens_feature_value(
             return f"<= {int(runtime_rounded)}"
         except Exception:
             return str(value)
-    if feature == "year":
-        try:
-            return _format_year_to_20yr_block_label(value)
-        except Exception:
-            return str(value)
     if feature == "adult":
         return "Yes" if value else "No"
     return str(value)
@@ -867,14 +870,17 @@ def _format_decade_label(decade_start: int) -> str:
     return f"{decade_start}s"
 
 
-def _format_year_to_20yr_block_label(value: Any) -> str:
+def _format_year_to_20yr_block_label(value: Any, rng: random.Random) -> str:
     """
     Format a year-like value into a 20-year phrase made of two adjacent decades.
     Example outputs: '1970s or 1980s', '1980s or 1990s'.
     """
-    year = int(float(value))
+    try:
+        year = int(float(value))
+    except Exception:
+        return str(value)
     decade_start = (year // 10) * 10
-    if random.choice([True, False]):
+    if rng.choice([True, False]):
         left, right = decade_start - 10, decade_start
     else:
         left, right = decade_start, decade_start + 10

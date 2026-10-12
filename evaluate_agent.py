@@ -803,6 +803,7 @@ def main():
     dataset_kwargs = dict(args.dataset_kwargs)
     dataset_kwargs.setdefault("max_xstar", 1)
     dataset_kwargs.setdefault("version", args.version)
+    dataset_kwargs.setdefault("seed", args.seed)
     dataset = get_dataset(args.dataset, **dataset_kwargs)
 
     # Determine spec indices

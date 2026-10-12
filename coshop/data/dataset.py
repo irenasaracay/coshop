@@ -383,6 +383,7 @@ class Dataset:
         catalog: Optional[pd.DataFrame] = None,
         popularity_df: Optional[pd.DataFrame] = None,
         identifying_cols: Optional[List[str]] = None,
+        seed: int = 0,
     ) -> None:
         """Initialise a Dataset.
 
@@ -419,7 +420,11 @@ class Dataset:
             identifying_cols: Columns (beyond ``"id"``) that uniquely identify
                 an item and should always appear in representations (e.g.
                 ``["title", "artist"]``).
+            seed: Seed for any randomness in building the dataset (currently the
+                MovieLens simulator year labels). Defaults to ``0``; the
+                evaluation driver passes its ``--seed``.
         """
+        self.seed = seed
         self.max_xstar = max_xstar
 
         # Optional cap on the number of search features the simulator can use per spec.
