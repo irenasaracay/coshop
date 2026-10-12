@@ -63,7 +63,10 @@ def _compute_capped_historical_required(
             break
         best_item = None
         best_help = -1
-        for item in hist_candidates:
+        # Iterate in sorted order so ties go to the smallest id. Iterating the
+        # set directly made the choice depend on the per-process string hash
+        # seed, so the subset changed between processes.
+        for item in sorted(hist_candidates):
             if item in required:
                 continue
             help_count = sum(

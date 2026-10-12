@@ -235,7 +235,7 @@ def _build_index(dataset_name: str, version: str = DEFAULT_VERSION) -> VectorInd
     """
     assert _model is not None
     t0 = time.perf_counter()
-    dataset = get_dataset(dataset_name, dev=False, version=version)
+    dataset = get_dataset(dataset_name, version=version)
     catalog = dataset.catalog
     feature_descriptions = dict(getattr(dataset, "true_features", None) or {})
     model_name = getattr(_model, "model_name", "unknown")
@@ -407,19 +407,38 @@ def cosine_percentile():
     if err:
         return err
 
+    # Optional allowed_ids restricts the comparison pool to the client's
+    # catalog (e.g. a subset catalog); query items outside it score 0.
+    allowed_ids = payload.get("allowed_ids")
+    if allowed_ids is not None and not isinstance(allowed_ids, list):
+        return jsonify({"error": "allowed_ids must be a list or null"}), 400
+    if allowed_ids is None:
+        pool_rows = np.arange(len(index.df_id))
+    else:
+        allowed_set = {str(x) for x in allowed_ids}
+        pool_rows = np.array(
+            [i for i, item_id in enumerate(index.df_id) if str(item_id) in allowed_set],
+            dtype=int,
+        )
+        if len(pool_rows) == 0:
+            return jsonify({"percentiles": [0.0] * len(q_rows)})
+
     ref_embs = index.embeddings[ref_rows]
-    catalog_scores = (1.0 - np.dot(index.embeddings, ref_embs.T)).min(axis=1)
-    n = len(catalog_scores)
+    pool_scores = (1.0 - np.dot(index.embeddings[pool_rows], ref_embs.T)).min(axis=1)
+    n = len(pool_scores)
     top_k = min(TOP_K_PERCENTILE_ITEMS, n)
-    top_indices = set(np.argpartition(catalog_scores, top_k - 1)[:top_k].tolist())
-    top_scores = catalog_scores[list(top_indices)]
+    top_local = np.argpartition(pool_scores, top_k - 1)[:top_k]
+    top_scores = pool_scores[top_local]
+    # index row -> position in pool_scores, for query rows in the top set
+    top_row_to_local = {int(pool_rows[i]): int(i) for i in top_local}
 
     percentiles = []
     for q_row in q_rows:
-        if q_row not in top_indices:
+        if q_row not in top_row_to_local:
             percentiles.append(0.0)
         else:
-            percentiles.append(float(np.mean(top_scores >= catalog_scores[q_row])))
+            q_score = pool_scores[top_row_to_local[q_row]]
+            percentiles.append(float(np.mean(top_scores >= q_score)))
 
     _log("cosine_percentile", dataset=payload.get("dataset"),
          latency_ms=int((time.perf_counter() - t0) * 1000))

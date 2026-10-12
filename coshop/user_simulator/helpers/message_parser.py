@@ -1213,7 +1213,7 @@ class MessageParserHMTests(unittest.TestCase):
     def setUpClass(cls):
         from ...data.hm.data import HMDataset
 
-        hm = HMDataset(dev=True, max_xstar=1)
+        hm = HMDataset(max_xstar=1)
         cls.hm_catalog = hm.catalog
         cls.hm_simulator_catalog = hm.simulator_catalog
         cls.hm_column_descriptions = hm.true_features

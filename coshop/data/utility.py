@@ -546,6 +546,13 @@ class ServerCosinePercentileUtilityFunction(UtilityFunction):
                     query_id=query_item_ids,
                     reference_ids=[str(x) for x in self.xstar],
                     version=self.version,
+                    # Rank against this catalog only, so a subset catalog
+                    # (subset_fraction) also restricts the comparison pool.
+                    allowed_ids=(
+                        self.catalog.index.astype(str).tolist()
+                        if self.catalog is not None
+                        else None
+                    ),
                 )
 
                 # Convert percentiles (0-1) to scores (0-100) and assign to results

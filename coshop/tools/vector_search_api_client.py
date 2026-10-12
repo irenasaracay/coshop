@@ -269,6 +269,7 @@ class VectorSearchAPIClient:
         reference_ids: List[str],
         version: Optional[str] = None,
         dataset_kwargs: Optional[Dict[str, Any]] = None,
+        allowed_ids: Optional[List[str]] = None,
     ) -> List[float]:
         """
         Compute percentile of query_ids' score compared to all items in the catalog.
@@ -282,7 +283,9 @@ class VectorSearchAPIClient:
             query_id: List of query item IDs
             reference_ids: List of reference item IDs
             dataset_kwargs: Optional dataset configuration
-            
+            allowed_ids: Optional whitelist of item IDs that form the comparison
+                pool (e.g. a subset catalog). ``None`` uses the whole index.
+
         Returns:
             List of percentiles (0-1, one per query_id) of query_ids' scores
         """
@@ -295,6 +298,8 @@ class VectorSearchAPIClient:
             payload["version"] = version
         if dataset_kwargs is not None:
             payload["dataset_kwargs"] = dataset_kwargs
+        if allowed_ids is not None:
+            payload["allowed_ids"] = [str(x) for x in allowed_ids]
 
         r = requests.post(
             f"{self.api_url}/cosine_percentile", json=payload, timeout=self.timeout_s

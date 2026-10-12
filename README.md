@@ -107,6 +107,18 @@ print(spec.item_name)                # e.g. "garment"
 Each `Specification` describes one task: the user's latent preferences (and SEC split), the
 candidate catalog, and the ground-truth utility used for scoring.
 
+**Catalog subset (optional).** By default every dataset uses its full catalog. Passing
+`subset_fraction` (e.g. `get_dataset("goodreads", subset_fraction=0.75)`, or
+`evaluate_agent.py --dataset_kwargs subset_fraction=0.75`) keeps that fraction of the catalog:
+- **What it keeps.** Every test user's target item, plus up to 3 items from each test user's
+  history, chosen greedily to cover as many users as possible. The rest is filled with the
+  lowest-sorted item ids up to the target size.
+- **Deterministic.** The same fraction gives the same subset in every process.
+- **Everything follows it.** The simulator's view of the catalog, the history shown for each
+  user, popularity, the agent's retrieval (BM25 and vector search, which only return subset
+  items), and both utility scores (the embedding percentile is ranked against subset items
+  only) all use the subset.
+
 ## How to use
 
 The most common use case is **evaluating your own model** against the standard CoShop
