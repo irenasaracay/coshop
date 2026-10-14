@@ -248,6 +248,10 @@ class MovieLensDataset(Dataset):
     def assets_file_id(self) -> str:
         return "1Voy2hJReKdY3-G4FVsL5U_gPXLO__XlR"
 
+    @property
+    def extended_assets_file_id(self) -> str:
+        return "1yXZi6Q2Gf0TP0lPUeCymiTkwjk_3YBf2"
+
     def _vagueify_simulator_catalog(self, df: pd.DataFrame) -> pd.DataFrame:
         """Reduce precision of simulator-visible feature values.
 
@@ -321,7 +325,7 @@ class MovieLensDataset(Dataset):
         self._config = load_dataset_config(DATASET_ROOT, version)
         self.version = self._config.get("version", version)
         # Download assets (catalog, transactions, ...) on first use if needed.
-        self._ensure_assets_available()
+        self._ensure_assets_available(split=kwargs.get("split", "test"))
         assets_dir = f"{DATASET_ROOT}/assets"
         # Load catalog
         catalog_df = pd.read_csv(
@@ -361,6 +365,8 @@ class MovieLensDataset(Dataset):
         # Ensure catalog index (IDs) are strings
         catalog_df.index = catalog_df.index.astype(str)
         if subset_fraction is not None:
+            if kwargs.get("split", "test") != "test":
+                raise ValueError("subset_fraction is only supported for the test split")
             from ..subset_catalog import subset_catalog_from_transactions
             from ..dataset import TEST_SET_SIZE
             catalog_df = subset_catalog_from_transactions(
@@ -391,19 +397,8 @@ class MovieLensDataset(Dataset):
             open(f"{assets_dir}/{self._config['feature_descriptions']}")
         )
 
-        # Initial known features
-        initial_known_features_path = (
-            f"{assets_dir}/{self._config['initial_known_features']}"
-        )
-        if os.path.exists(initial_known_features_path):
-            initial_known_features = pd.read_csv(initial_known_features_path)
-            self.initial_known_features = initial_known_features
-        else:
-            self.initial_known_features = pd.DataFrame(
-                columns=["user_idx", "feature_names"]
-            )
-
-        self.sec_split = json.load(open(f"{assets_dir}/{self._config['sec_split']}"))
+        # Per-user SEC split and initial known features (test + extended split)
+        self._load_per_user_assets(assets_dir)
 
         kwargs.setdefault(
             "restrict_representation_to_simulator_columns",
@@ -454,7 +449,7 @@ class MovieLensDataset(Dataset):
 
             target_items = self.catalog.loc[xstars]
             target_items_simulator_view = self.simulator_catalog.loc[xstars]
-            sec_split = self.sec_split[str(ix)]
+            sec_split = self.get_sec_split_for_spec(ix)
 
             # Use FeatureTracker to build z-variants so they match get_known_context.
             # Use the same search/experience/credence split as the simulator.

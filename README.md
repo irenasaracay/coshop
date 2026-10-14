@@ -41,6 +41,8 @@ pip install -e .
 The dataset assets (catalogs, transactions, and H&M images) are
 downloaded automatically on the first `get_dataset(...)` call
 for a given dataset, then cached in the installed package directory.
+The extended split's users (see [Data](#data)) are a separate, smaller download,
+fetched the first time you load `split="extended"`.
 
 ### API keys
 
@@ -107,6 +109,14 @@ print(spec.item_name)                # e.g. "garment"
 Each `Specification` describes one task: the user's latent preferences (and SEC split), the
 candidate catalog, and the ground-truth utility used for scoring.
 
+**More users.** Besides the 100 test users, each dataset has an **extended split** of
+more real users: H&M 894 (indices 100–993), MovieLens 900 (100–999) and Goodreads 900
+(100–999). Load them with `get_dataset(name, split="extended")` or
+`evaluate_agent.py --split extended`. They are built the same way as the test users, and
+their assets download on first use. How the users and their per-user assets were made,
+and the scripts to make more, are in
+[`coshop/data/preprocessing/`](coshop/data/preprocessing/README.md).
+
 **Catalog subset (optional).** By default every dataset uses its full catalog. Passing
 `subset_fraction` (e.g. `get_dataset("goodreads", subset_fraction=0.75)`, or
 `evaluate_agent.py --dataset_kwargs subset_fraction=0.75`) keeps that fraction of the catalog:
@@ -118,6 +128,8 @@ candidate catalog, and the ground-truth utility used for scoring.
   user, popularity, the agent's retrieval (BM25 and vector search, which only return subset
   items), and both utility scores (the embedding percentile is ranked against subset items
   only) all use the subset.
+- **Test split only.** The extended split (users 100+) doesn't support it, because the subset
+  only guarantees items for the test users.
 
 ## How to use
 

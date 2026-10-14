@@ -533,6 +533,7 @@ def process_spec(spec_index: int, args, dataset) -> bool:
             "config": {
                 "dataset": args.dataset,
                 "spec_index": spec_index,
+                "split": args.split,
                 "policy": args.policy,
                 "policy_model": args.policy_model,
                 "simulator": args.simulator,
@@ -643,7 +644,15 @@ def main():
         nargs="*",
         type=int,
         default=None,
-        help="Spec indices to run (omit or pass -1 for all specs, indices 0-99)",
+        help="Spec indices to run (omit or pass -1 for every spec in --split: "
+        "0-99 for test, 100+ for extended)",
+    )
+    parser.add_argument(
+        "--split",
+        default="test",
+        choices=["test", "extended"],
+        help="Dataset split: the benchmark test set (users 0-99, default) or the "
+        "extended split (users 100+, needs generated assets; see coshop/data/preprocessing)",
     )
     parser.add_argument(
         "--version",
@@ -803,12 +812,13 @@ def main():
     dataset_kwargs = dict(args.dataset_kwargs)
     dataset_kwargs.setdefault("max_xstar", 1)
     dataset_kwargs.setdefault("version", args.version)
+    dataset_kwargs.setdefault("split", args.split)
     dataset_kwargs.setdefault("seed", args.seed)
     dataset = get_dataset(args.dataset, **dataset_kwargs)
 
     # Determine spec indices
     if args.spec_indices is None or args.spec_indices == [-1]:
-        indices = list(range(dataset.fixed_length))
+        indices = list(dataset.specs.keys())
     else:
         indices = args.spec_indices
 

@@ -45,6 +45,12 @@ ROOT_DIR = Path(__file__).parent  # coshop/data/
 # Number of benchmark specs exposed per dataset (indices 0..TEST_SET_SIZE-1).
 TEST_SET_SIZE = 100
 
+# Dataset splits. "test" is the benchmark test set (indices 0..TEST_SET_SIZE-1).
+# "extended" is every remaining user in the transactions directory (indices
+# TEST_SET_SIZE..N-1); its per-user assets live in separate ``*_extended`` files
+# produced by :mod:`coshop.data.preprocessing`.
+SPLITS = ("test", "extended")
+
 # Placeholder used to fill NA in simulator/target views (e.g. hm/data.py fillna).
 OPEN_TO_ANYTHING = "open to anything"
 
@@ -383,6 +389,7 @@ class Dataset:
         catalog: Optional[pd.DataFrame] = None,
         popularity_df: Optional[pd.DataFrame] = None,
         identifying_cols: Optional[List[str]] = None,
+        split: str = "test",
         seed: int = 0,
     ) -> None:
         """Initialise a Dataset.
@@ -420,11 +427,19 @@ class Dataset:
             identifying_cols: Columns (beyond ``"id"``) that uniquely identify
                 an item and should always appear in representations (e.g.
                 ``["title", "artist"]``).
+            split: Which users to expose. ``"test"`` (default) is the benchmark
+                test set, indices ``0..TEST_SET_SIZE-1``. ``"extended"`` exposes
+                the remaining users, indices ``TEST_SET_SIZE..N-1``; their
+                transactions and per-user assets are downloaded separately
+                on first use.
             seed: Seed for any randomness in building the dataset (currently the
                 MovieLens simulator year labels). Defaults to ``0``; the
                 evaluation driver passes its ``--seed``.
         """
         self.seed = seed
+        if split not in SPLITS:
+            raise ValueError(f"Unknown split {split!r}. Must be one of {SPLITS}.")
+        self.split = split
         self.max_xstar = max_xstar
 
         # Optional cap on the number of search features the simulator can use per spec.
@@ -516,20 +531,25 @@ class Dataset:
               ...
             }
         """
-        filename = (getattr(self, "_config", None) or {}).get(
-            "baseline_queries", "baseline_queries.json"
-        )
-        json_path = ROOT_DIR / self.dataset_name / "assets" / filename
-        if not json_path.exists():
-            return {}
-        try:
-            with json_path.open("r", encoding="utf-8") as f:
-                data = json.load(f)
-        except Exception:
-            return {}
-        if not isinstance(data, dict):
-            return {}
-        return data
+        config = getattr(self, "_config", None) or {}
+        assets_dir = ROOT_DIR / self.dataset_name / "assets"
+
+        def _read(filename: Optional[str]) -> Dict[str, Any]:
+            if not filename:
+                return {}
+            json_path = assets_dir / filename
+            if not json_path.exists():
+                return {}
+            try:
+                with json_path.open("r", encoding="utf-8") as f:
+                    data = json.load(f)
+            except Exception:
+                return {}
+            return data if isinstance(data, dict) else {}
+
+        data = _read(config.get("baseline_queries", "baseline_queries.json"))
+        extended = _read(config.get("baseline_queries_extended"))
+        return _merge_extended_assets(data, extended, "baseline_queries")
 
     def get_vector_search_baselines_for_spec(
         self, index: int
@@ -672,6 +692,93 @@ class Dataset:
 
             return new_sec_split, adjusted_view
 
+    def _load_per_user_assets(self, assets_dir: str) -> None:
+        """Load the per-user SEC split and initial known features.
+
+        Sets ``self.sec_split`` (dict keyed by user index string) and
+        ``self.initial_known_features`` (DataFrame with a ``user_idx`` column).
+        Both merge the test-set file (config keys ``sec_split`` /
+        ``initial_known_features``) with the optional extended-split file
+        (``sec_split_extended`` / ``initial_known_features_extended``) when it
+        exists.
+        """
+        config = self._config
+
+        def _path(key: str) -> Optional[str]:
+            filename = config.get(key)
+            if not filename:
+                return None
+            path = os.path.join(assets_dir, filename)
+            return path if os.path.exists(path) else None
+
+        self.sec_split = json.load(open(f"{assets_dir}/{config['sec_split']}"))
+        sec_split_extended_path = _path("sec_split_extended")
+        if sec_split_extended_path is not None:
+            self.sec_split = _merge_extended_assets(
+                self.sec_split,
+                json.load(open(sec_split_extended_path)),
+                "sec_split",
+            )
+
+        frames = []
+        for key in ("initial_known_features", "initial_known_features_extended"):
+            path = _path(key)
+            if path is not None:
+                frames.append(pd.read_csv(path))
+        if len(frames) == 2:
+            _merge_extended_assets(
+                {str(i): None for i in frames[0]["user_idx"]},
+                {str(i): None for i in frames[1]["user_idx"]},
+                "initial_known_features",
+            )
+        if not frames:
+            self.initial_known_features = pd.DataFrame(
+                columns=["user_idx", "feature_names"]
+            )
+        elif len(frames) == 1:
+            self.initial_known_features = frames[0]
+        else:
+            self.initial_known_features = pd.concat(frames, ignore_index=True)
+
+    def get_sec_split_for_spec(self, index: int) -> Dict[str, List[str]]:
+        """Return the search/experience/credence split for a user.
+
+        Raises:
+            KeyError: If no SEC split has been generated for this user.
+        """
+        try:
+            return self.sec_split[str(index)]
+        except KeyError:
+            raise KeyError(
+                f"No SEC split for {self.dataset_name} user {index}. Generate "
+                "it with `python -m coshop.data.preprocessing.compute_sec_split "
+                f"--dataset {self.dataset_name} --start {index} --end {index + 1}`."
+            ) from None
+
+    def load_user_raw(self, index: int) -> Dict[str, Any]:
+        """Load one user's target and history without building a Specification.
+
+        Used by the preprocessing scripts that generate per-user assets (e.g.
+        the SEC split), which must run before a :class:`Specification` can be
+        constructed.
+
+        Returns:
+            A dict with ``xstar`` (target ids, capped at ``max_xstar``),
+            ``xstar_simulator_view`` (simulator view of the targets) and
+            ``historical_ids`` (history ids present in the catalog).
+        """
+        user_info, xstars = self.load_transaction_data(index)
+        xstars = [str(x) for x in xstars]
+        if self.max_xstar is not None:
+            xstars = xstars[: self.max_xstar]
+        historical_ids = self.build_historical_data(user_info)[1]
+        catalog_index_set = set(self.catalog.index)
+        return {
+            "xstar": xstars,
+            "xstar_simulator_view": self.simulator_catalog.loc[xstars],
+            "historical_ids": [h for h in historical_ids if h in catalog_index_set],
+        }
+
     def get_initial_known_features_for_spec(
         self, index: int
     ) -> Optional[List[str]]:
@@ -795,6 +902,11 @@ class Dataset:
     def assets_file_id(self) -> str:
         return None
 
+    @property
+    def extended_assets_file_id(self) -> Optional[str]:
+        """Google Drive id of the extended-split zip (users ``TEST_SET_SIZE``+)."""
+        return None
+
     def __repr__(self) -> str:
         return f"Dataset(name={self.dataset_name}, specs={len(self.specs)})"
 
@@ -823,13 +935,22 @@ class Dataset:
             if getattr(self, attr) is None:
                 raise ValueError(f"{attr} is not set")
 
-        # Store the total fixed length before applying the test-set cap
+        # Store the total number of users before applying the split
         self._total_length = self.length
 
-        # Test set: use first 100 (or all if fewer than 100 are available),
-        # keyed by their actual file indexes (0-99).
-        self.length = min(TEST_SET_SIZE, self._total_length)
-        self.specs = {i: None for i in range(self.length)}
+        # Specs are keyed by their actual file indexes. Test set: the first
+        # TEST_SET_SIZE users (or all if fewer). Extended: everyone after that.
+        if self.split == "test":
+            indexes = range(min(TEST_SET_SIZE, self._total_length))
+        else:
+            indexes = range(TEST_SET_SIZE, self._total_length)
+            if not indexes:
+                raise ValueError(
+                    f"No extended-split users found for {self.dataset_name}: the "
+                    f"transactions directory only has {self._total_length} users."
+                )
+        self.length = len(indexes)
+        self.specs = {i: None for i in indexes}
 
     def load_specs(
         self, indexes: Optional[List[int]] = None, reload: bool = False
@@ -876,7 +997,7 @@ class Dataset:
         """
         raise NotImplementedError
 
-    def _ensure_assets_available(self) -> None:
+    def _ensure_assets_available(self, split: str = "test") -> None:
         """Ensure dataset assets are downloaded and available.
 
         Assets are hosted on Google Drive and downloaded on first use. A
@@ -885,7 +1006,16 @@ class Dataset:
         download is never mistaken for a complete one and is re-attempted on
         the next instantiation. In an editable/source checkout where assets are
         already present, the sentinel is created up front so no download fires.
+
+        For ``split="extended"``, the extended-split zip is also fetched (see
+        :meth:`_ensure_extended_assets_available`).
         """
+        self._ensure_base_assets_available()
+        if split == "extended":
+            self._ensure_extended_assets_available()
+
+    def _ensure_base_assets_available(self) -> None:
+        """Download the main asset zip (catalog and test-split users) if needed."""
         if self.assets_file_id is None:
             # no assets to download for this dataset
             return
@@ -925,8 +1055,53 @@ class Dataset:
             )
         marker.touch()
 
+    def _ensure_extended_assets_available(self) -> None:
+        """Download the extended-split zip if needed.
+
+        The zip holds the transactions of users ``TEST_SET_SIZE`` and up plus
+        the ``*_extended`` per-user asset files, and unzips into the same assets
+        directory. It has its own ``.download_complete_extended`` sentinel, so
+        installs that already have the main assets still fetch it.
+        """
+        assets_dir = ROOT_DIR / self.dataset_name / "assets"
+        marker = assets_dir / ".download_complete_extended"
+        if marker.exists():
+            return
+
+        # Source checkout (or generated locally): the extended files are present.
+        keys = ("sec_split_extended", "initial_known_features_extended", "baseline_queries_extended")
+        filenames = [self._config.get(k) for k in keys]
+        if all(filenames) and all((assets_dir / f).exists() for f in filenames):
+            marker.touch()
+            return
+
+        if self.extended_assets_file_id is None:
+            raise RuntimeError(
+                f"No extended-split assets are available for {self.dataset_name!r}."
+            )
+        print(f"Downloading extended-split assets for {self.dataset_name}")
+        try:
+            ok = download_file_from_google_drive(
+                self.extended_assets_file_id, str(assets_dir), unzip=True, **DOWNLOAD_SETTINGS
+            )
+        except Exception as e:
+            ok = False
+            print(f"Download failed for {self.dataset_name}: {e}")
+        if not ok:
+            raise RuntimeError(
+                f"Failed to download extended-split assets for {self.dataset_name!r} "
+                f"(Drive file id {self.extended_assets_file_id!r}). Ensure the file's "
+                "sharing is set to 'Anyone with the link' and is reachable."
+            )
+        marker.touch()
+
     def __len__(self) -> int:
         return self.length
+
+    @property
+    def total_users(self) -> int:
+        """Number of users in the transactions directory, across all splits."""
+        return self._total_length
 
     def __getitem__(self, key: Union[str, int], load_on_demand: bool = True) -> Specification:
         if isinstance(key, int):
@@ -937,8 +1112,8 @@ class Dataset:
             ix = int(key.split("_")[1])
 
         assert ix in self.specs, (
-            f"Index {ix} is out of bounds for test fixed specs. "
-            f"Test set only includes 0 to {self.length - 1}"
+            f"Index {ix} is not in the {self.split!r} split, which includes "
+            f"{min(self.specs, default=None)} to {max(self.specs, default=None)}"
         )
 
         spec = self.specs.get(ix, None)
@@ -952,6 +1127,22 @@ class Dataset:
 
 
 ################## HELPER FUNCTIONS ################
+
+
+def _merge_extended_assets(
+    base: Dict[str, Any], extended: Dict[str, Any], what: str
+) -> Dict[str, Any]:
+    """Merge an extended-split per-user asset dict into the test-set one.
+
+    Extended files may only hold users at index >= TEST_SET_SIZE, so the
+    test-set assets can never be shadowed.
+    """
+    bad = [k for k in extended if int(k) < TEST_SET_SIZE or k in base]
+    if bad:
+        raise ValueError(
+            f"Extended {what} file has keys that overlap the test set: {sorted(bad)[:10]}"
+        )
+    return {**base, **extended}
 
 
 def build_z_variants_for_spec(

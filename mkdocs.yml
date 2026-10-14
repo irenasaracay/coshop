@@ -55,6 +55,7 @@ nav:
       - Representation: api/data/representation.md
       - Utility: api/data/utility.md
       - Subset catalog: api/data/subset_catalog.md
+      - Preprocessing: api/data/preprocessing.md
       - H&M: api/data/hm.md
       - MovieLens: api/data/movielens.md
       - Goodreads: api/data/goodreads.md
