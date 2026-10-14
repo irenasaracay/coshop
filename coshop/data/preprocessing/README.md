@@ -98,9 +98,6 @@ simulator view of the full catalog.
 - **Credence:** s ≥ 1, a value the user has never bought, a feature that is
   ≥ 95% missing in the catalog, or a feature in `ALWAYS_CREDENCE_FEATURES`.
 
-Deterministic. The MovieLens `year` label ("1980s or 1990s") is drawn from a
-private RNG seeded with the dataset `seed`, default 0 (see below).
-
 **Initial known features, S1** (`initial_known_features`). Start from the
 always-included feature: `product_type_name` for H&M, `genres` otherwise. Then
 repeat until x* is in the top K=250:
@@ -126,19 +123,10 @@ extraction scripts are not part of this package.
   in the same group (product type, or genres), up to 5. Line 2 holds 5
   validation items. Only the first id on line 1 is used as x*. History is
   everything that isn't a target, restricted to catalog items.
-- **H&M.** Customers with at least 30 purchases, in customer-id order. v2 is
-  v1 with 6 users removed (v1 indices 8, 18, 35, 38, 46, 49) and renumbered, so
-  v1 and v2 indices differ from 8 on.
+- **H&M.** Customers with at least 30 purchases, in customer-id order. 
 - **MovieLens.** ML-20M users with at least 50 ratings of 4 or more on at least
   5 distinct days, in user-id order.
-- **Goodreads.** Users with at least 5 read books. Users whose first target is
-  tagged sex/erotic/steamy/dark-romance were removed. Users 0–89 and 202–999
-  come from the current extraction. **Users 90–201 come from an earlier version
-  of the extraction:** 1 target (all books read on the last date), at least 15
-  history items, and a 2-line `*_items.txt` with `last_read_date` in the user
-  JSON. This includes test users 90–99 and extended users 100–201.
-- **Catalog.** Every extended user's targets and history are already in
-  `catalog_v2`, so adding users needs no new catalog rows or feature extraction.
+- **Goodreads.** Users with at least 5 read books. 
 - **MovieLens year labels.** The simulator sees a movie's year as one of the two
   20-year windows that contain it ("1970s or 1980s" or "1980s or 1990s"). The
   window is drawn with a private `random.Random(seed)` in catalog row order.
